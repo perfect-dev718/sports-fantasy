@@ -1,0 +1,15 @@
+// Fonts
+@font-face {
+    font-family: Rubik;
+    src: url("/font/Rubki/static/Rubik-Regular.ttf");
+}
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// background
+@import "land/background";
