@@ -87,11 +87,11 @@
                 </div>
             </div>
             <div class="col-md-12 text-center d-flex justify-content-center">
-                <input class="form-control custom" type="password" placeholder="{{__('Email Address')}}" name="password" id="password" required>
+                <input class="form-control custom" type="password" placeholder="{{__("New Password")}}" name="password" id="password" required>
             </div>
 
             <div class="col-md-12 text-center d-flex justify-content-center">
-                <input class="form-control custom" placeholder="{{__('Confirm Password')}}" name="password_confirmation" id="password_confirmation">
+                <input class="form-control custom" placeholder="{{__('Confirm Password')}}" type="password" name="password_confirmation" id="password_confirmation">
             </div>
 
             <div class="sign-btns text-center">

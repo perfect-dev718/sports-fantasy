@@ -10011,3 +10011,661 @@ h3 {
   min-width: 100vw;
   min-height: 100vh;
 }
+
+#login-page .logo {
+  margin-bottom: 18px;
+  margin-top: 91px;
+}
+#login-page .logo img {
+  height: 118px;
+  width: 139.305557251px;
+}
+#login-page .form-control.custom {
+  height: 47px;
+  width: 302px;
+  left: 0px;
+  top: 0px;
+  border-radius: 20px;
+  /*font-family: Rubik;*/
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  color: #fff;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+#login-page .form-control::-moz-placeholder {
+  color: #fff;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+}
+#login-page .form-control:-ms-input-placeholder {
+  color: #fff;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+}
+#login-page .form-control::placeholder {
+  color: #fff;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+}
+#login-page select option {
+  background: black;
+}
+#login-page .form-control.half {
+  height: 47px;
+  width: 145px;
+}
+#login-page .form-control.half:first-child {
+  margin-right: 10px;
+}
+#login-page .signup-btn {
+  margin-bottom: 25px;
+  background: linear-gradient(122.33deg, #DC3C08 9.23%, #E94915 44.64%, #F87700 93.17%);
+  border-radius: 30px;
+  height: 47px;
+  width: 302px;
+  left: 569px;
+  top: 504px;
+  /*font-family: Rubik;*/
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  color: #FFFFFF;
+}
+#login-page .separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 302px;
+  color: #A896C7;
+}
+#login-page .separator::before,
+#login-page .separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #A896C7;
+}
+#login-page .separator:not(:empty)::before {
+  margin-right: 0.25em;
+}
+#login-page .separator:not(:empty)::after {
+  margin-left: 0.25em;
+}
+#login-page .social-round-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 100%;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  font-size: 20px;
+  padding-top: 7px;
+}
+
+.form-control.custom {
+  height: 47px;
+  width: 302px;
+  left: 0px;
+  top: 0px;
+  border-radius: 20px;
+  /*font-family: Rubik;*/
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  color: #fff;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+
+#app.dashboard .menu-block {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  background: linear-gradient(180deg, #FFFFFF 51.06%, #CCDEEF 95.81%, #4BA2F1 141.49%);
+  border-radius: 30px;
+  height: 720px;
+  width: 349px;
+  left: 80px;
+  top: 64px;
+}
+#app.dashboard .menu-block .menu-logo-border {
+  border: 1px solid #2E58FF;
+  height: 62px;
+  width: 62px;
+  border-radius: 100%;
+  margin-top: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#app.dashboard .menu-block .menu-logo-border img {
+  height: 44.766544342px;
+  width: 52.849395752px;
+}
+#app.dashboard .menu-block.show {
+  display: block !important;
+}
+#app.dashboard .menu-items {
+  padding: 10px 30px 10px 40px;
+}
+#app.dashboard .menu-items svg {
+  font-size: 24px;
+}
+#app.dashboard .menu-items span {
+  font-size: 24px;
+  color: #979BAA;
+}
+#app.dashboard .menu-items h6 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #0F1441;
+  margin-left: 37px;
+}
+#app.dashboard .menu-items input[type=search] {
+  border-radius: 10px;
+}
+#app.dashboard .back-btn {
+  position: absolute;
+  text-transform: capitalize;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #FFFFFF;
+  right: 100px;
+}
+#app.dashboard header {
+  padding: 17px 15px;
+}
+#app.dashboard header img.logo {
+  height: 46px;
+  width: 54px;
+}
+#app.dashboard header .link {
+  align-items: center;
+}
+#app.dashboard header .link span {
+  color: white;
+  font-size: 21px;
+  margin-right: 30px;
+}
+#app.dashboard .navbar {
+  padding: 5px 70px;
+  height: 58px;
+  border-bottom: 0.5px solid #5A5889;
+}
+#app.dashboard .navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+#app.dashboard .navbar .navbar-brand {
+  padding-right: 20px;
+  border-right: 0.5px solid #5A5889;
+}
+#app.dashboard .navbar .navbar-brand span {
+  background: white;
+  border-radius: 100%;
+  height: 38px;
+  width: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app.dashboard .navbar .navbar-brand span img {
+  width: 24px;
+  height: 21px;
+}
+#app.dashboard .dropdown {
+  float: left;
+  overflow: hidden;
+}
+#app.dashboard .dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+#app.dashboard .dropdown-content {
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+#app.dashboard .dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+#app.dashboard .dropdown-content a:hover {
+  background-color: #ddd;
+}
+#app.dashboard .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#draft .tab {
+  display: none;
+  text-align: center;
+}
+#draft .tab .image {
+  height: 193.8784484863px;
+  width: 211.9044952393px;
+  margin: 42px auto;
+  position: relative;
+}
+#draft .tab .image img.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+#draft .tab .image img.logo {
+  position: absolute;
+  left: 24px;
+  top: 27px;
+  height: 119.589012146px;
+  width: 141.1814727783px;
+}
+#draft .tab .image img.autopick {
+  position: absolute;
+  left: 60px;
+  top: 46.8px;
+  width: 120px;
+  height: 74.38px;
+}
+#draft .tab .image img.snack {
+  position: absolute;
+  height: 138px;
+  width: 111.244972229px;
+  left: 47px;
+  top: 27px;
+}
+#draft .tab .image img.auction {
+  position: absolute;
+  height: 130.0003967285px;
+  width: 114.6912841797px;
+  left: 51px;
+  top: 16px;
+}
+#draft .tab h5 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+#draft .tab p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 49px;
+  width: 245px;
+  margin: auto;
+}
+#draft .tab.active {
+  display: block;
+}
+#draft .draft-btn {
+  display: none;
+  background: linear-gradient(122.33deg, #DC3C08 9.23%, #E94915 44.64%, #F87700 93.17%);
+  border-radius: 30px;
+  height: 47px;
+  width: 301px;
+  margin-bottom: 35px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+#draft .draft-btn.active {
+  display: initial;
+}
+#draft .tab-slider {
+  margin-top: 49px;
+  margin-bottom: 33px;
+}
+#draft .tab-slider span {
+  cursor: pointer;
+  color: #FFFFFF;
+}
+#draft .skip-block {
+  width: 301px;
+  margin: auto;
+}
+
+#create-league .photo {
+  height: 118px;
+  width: 118px;
+  border-radius: 100%;
+}
+#create-league .name {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin-top: 16px;
+}
+#create-league .desc {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #979BAA;
+}
+#create-league .create-btn {
+  background: linear-gradient(122.33deg, #DC3C08 9.23%, #E94915 44.64%, #F87700 93.17%);
+  border-radius: 30px;
+  margin-top: 70px;
+  height: 47px;
+  width: 301px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+#create-league .join-btn {
+  background: linear-gradient(180deg, #FFFFFF 51.06%, #4BA2F1 141.49%);
+  margin-top: 40px;
+  border-radius: 30px;
+  height: 45px;
+  width: 299px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #0F1441;
+}
+#create-league p.star {
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 38px;
+  height: 34px;
+  width: 141px;
+  background: transparent;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#create-league p.star span {
+  color: #FFD064;
+  font-size: 20px;
+}
+#create-league .btn-groups {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  margin-top: 90px;
+}
+#create-league .btn-groups button {
+  background: linear-gradient(133.51deg, #DC3C08 7.74%, #E94915 37.4%, #F87700 78.05%);
+  width: 278px;
+  height: 71px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#create-league .btn-groups button img {
+  height: 34px;
+  width: 34.0000724792px;
+}
+#create-league .draft-btn {
+  border-top-left-radius: 19px;
+  border-top-right-radius: 19px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 0.2px solid white;
+}
+#create-league .create-team-btn {
+  border-bottom-left-radius: 19px;
+  border-bottom-right-radius: 19px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 0.2px solid white;
+}
+
+#name-league .form-control {
+  height: 47px;
+  width: 301px;
+  border-radius: 30px;
+  border: 1px solid #FFFFFF;
+  margin: 20px auto;
+  background: transparent;
+  color: white;
+}
+#name-league .form-control option {
+  background: #1b1e21;
+}
+#name-league .form-control:first-child {
+  margin-top: 180px;
+}
+#name-league .create-btn {
+  height: 47px;
+  width: 301px;
+  border-radius: 30px;
+  color: white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  background: linear-gradient(122.33deg, #DC3C08 9.23%, #E94915 44.64%, #F87700 93.17%);
+  text-transform: uppercase;
+}
+#name-league .subtitle {
+  margin-top: 168px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 135%;
+  text-align: center;
+  color: #FFFFFF;
+}
+#name-league .btn-list {
+  margin: 50px auto;
+  width: 420px;
+}
+#name-league .btn-list button {
+  height: 46px;
+  width: 52px;
+  border-radius: 9px;
+  border: 3px solid #FFFFFF;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  background: transparent;
+}
+#name-league .btn-list button.active {
+  background: linear-gradient(180deg, #FFFFFF 51.06%, #4BA2F1 141.49%);
+  color: #3B2561;
+}
+
+#game-center {
+  padding-top: 220px;
+}
+#game-center .invite-btn {
+  background: linear-gradient(122.33deg, #DC3C08 9.23%, #E94915 44.64%, #F87700 93.17%);
+  height: 202px;
+  width: 307px;
+  border-radius: 7px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 40px;
+}
+#game-center .invite-btn img {
+  height: 68.4444503784px;
+  width: 46.2000045776px;
+  margin-bottom: 20px;
+}
+#game-center .public-league-btn {
+  background: linear-gradient(122.33deg, rgba(220, 60, 8, 0.8) 9.23%, rgba(233, 73, 21, 0.8) 44.64%, rgba(248, 119, 0, 0.8) 93.17%);
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 7px;
+  height: 202px;
+  width: 307px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+}
+#game-center .public-league-btn img {
+  height: 70px;
+  width: 70px;
+  margin-bottom: 20px;
+}
+
+#draft_order .top-block img:first-child {
+  height: 42.0491790771px;
+  width: 42.0491790771px;
+  z-index: 1;
+}
+#draft_order .top-block img:nth-child(2) {
+  height: 54.2816696167px;
+  width: 54.2816696167px;
+  z-index: 100;
+}
+#draft_order .top-block img:nth-child(3) {
+  height: 42.0491790771px;
+  width: 42.0491790771px;
+  z-index: 1;
+}
+#draft_order .top-block .team-number {
+  margin-top: 5.8px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+#draft_order .top-block .top-left {
+  border-top: 0.5px solid #5A5889;
+  border-right: 0.25px solid #5A5889;
+  padding-top: 26px;
+  padding-right: 36px;
+}
+#draft_order .top-block .top-right {
+  border-top: 0.5px solid #5A5889;
+  border-left: 0.25px solid #5A5889;
+  padding-left: 68px;
+  padding-top: 33px;
+}
+#draft_order table tr {
+  border: none;
+}
+#draft_order table th, #draft_order table td {
+  border-bottom: 0.5px solid #5A5889;
+}
+#draft_order table th {
+  background: #090B43;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  color: #676CC2;
+}
+#draft_order table td {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+}
+
+#main-dashboard header {
+  padding: 10px;
+}
+
+#join-league .logo-block {
+  margin-top: 60px;
+  margin-bottom: 70px;
+}
+#join-league .ledgue-card {
+  height: 300px;
+  width: 800px;
+  border-radius: 30px;
+  background: transparent;
+  border: 0.5px solid #5A5889;
+}
+#join-league .ledgue-card .title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+#join-league .ledgue-card .block {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+#join-league .ledgue-card .block:first-child {
+  border-right: 0.5px solid #5A5889;
+}
+#join-league .create-btn {
+  background: linear-gradient(122.33deg, #DC3C08 9.23%, #E94915 44.64%, #F87700 93.17%);
+  border-radius: 30px;
+  height: 47px;
+  width: 301px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
