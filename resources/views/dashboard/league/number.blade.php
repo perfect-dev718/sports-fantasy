@@ -39,7 +39,7 @@
     <script>
         $(function (){
             $('#confirmBtn').click(function (){
-                location.href = "{{ route('game.center') }}";
+                location.href = "{{ route('invite.public') }}";
             })
 
             $('.number').click(function (){

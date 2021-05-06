@@ -36,7 +36,9 @@
 <div id="app" class="dashboard">
     <header class="mobile-hidden d-flex justify-content-between">
         <div class="col-md-6">
-            <img src="{{ asset('image/logo.svg') }}" class="logo">
+            <a href="/">
+                <img src="{{ asset('image/logo.svg') }}" class="logo">
+            </a>
         </div>
         <div class="col-md-3 d-flex justify-content-end link">
             <span class="fa fa-comment"></span>

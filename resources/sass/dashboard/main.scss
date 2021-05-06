@@ -26,7 +26,7 @@
         height: 720px;
         width: 349px;
         left: 80px;
-        top: 64px;
+        top: 140px;
         .menu-logo-border {
             border: 1px solid #2E58FF;
             height: 62px;
@@ -462,6 +462,85 @@
         }
     }
 
+    .my-league-btn {
+        position: relative;
+        background: linear-gradient(180deg, #FFFFFF 51.06%, #CCDEEF 95.81%, #4BA2F1 141.49%);
+        border-radius: 5px;
+        height: 202px;
+        width: 307px;
+        .header {
+            display: flex;
+            padding-left: 11px;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            left: 0;
+            height: 27px;
+            border-bottom: 0.5px solid #979BAA;
+
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+            color: #979BAA;
+        }
+        .footer {
+            bottom: 0;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 27px;
+            border-top: 0.5px solid #979BAA;
+
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 18px;
+            text-transform: capitalize;
+            color: #2E58FF;
+            text-align: center;
+            align-items: center;
+        }
+        .content {
+            padding: 0 46px;
+            .team-name {
+                font-style: normal;
+                font-weight: bolder;
+                font-size: 16px;
+                line-height: 18px;
+                text-align: center;
+                text-transform: capitalize;
+                color: #0F1441;
+                margin-left: 9px;
+            }
+            .desc {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 13px;
+                line-height: 15px;
+                color: #979BAA;
+            }
+            .day {
+                h3 {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 18px;
+                    text-transform: uppercase;
+                    color: #0F1441;
+                }
+                small {
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 14px;
+                    color: #979BAA;
+                }
+            }
+        }
+    }
+
     .public-league-btn {
         background: linear-gradient(122.33deg, rgba(220, 60, 8, 0.8) 9.23%, rgba(233, 73, 21, 0.8) 44.64%, rgba(248, 119, 0, 0.8) 93.17%);
         border: 1px solid #FFFFFF;
@@ -599,4 +678,375 @@
         line-height: 19px;
         color: #FFFFFF;
     }
+}
+
+.league.modal {
+    @media (min-width: 576px) {
+        .modal-dialog {
+            max-width: 500px;
+            margin: calc(50vh - 160px) auto;
+        }
+    }
+    .modal-header {
+        border: none;
+        .close {
+            color: white;
+            opacity: 1;
+        }
+    }
+    .modal-content {
+        border-radius: 30px;
+        background: #392461;
+        color: white;
+    }
+    .modal-body {
+        .title {
+            font-weight: 500;
+            font-size: 24px!important;
+            line-height: 28px;
+            text-align: center;
+            margin-bottom: 54px;
+        }
+    }
+    .modal-footer {
+        border: none;
+    }
+    .create-btn{
+        background: linear-gradient(122.33deg, #DC3C08 9.23%, #E94915 44.64%, #F87700 93.17%);
+        border-radius: 30px;
+        height: 47px;
+        width: 301px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFF;
+    }
+}
+
+#choose-league {
+    padding-top: 54px;
+    .title {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 36px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .content-block {
+        margin: auto;
+        margin-top: 33px;
+        width: 700px;
+        height: 665px;
+        border: 0.5px solid #5A5889;
+        box-sizing: border-box;
+        border-radius: 30px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        &::-webkit-scrollbar-track {
+            width: 8px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background: #5A5889;
+        }
+        .content-list {
+            padding: 0;
+            li {
+                border-bottom: 0.5px solid #5A5889;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                //padding: 20px 0px;
+                .avatar-block {
+                    justify-content: center;
+                    display: flex;
+                    align-items: center;
+                    .avatar {
+                        height: 55px;
+                        width: 55px;
+                        border-radius: 100%;
+                    }
+                }
+                .name-block {
+                    .name {
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 18px;
+                        line-height: 21px;
+                        color: #FFFFFF;
+                    }
+                    .desc {
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 12.8px;
+                        line-height: 15px;
+                        color: #B7B6DC;
+                    }
+                }
+                .action-block {
+                    align-items: center;
+                    padding-right: 28px;
+                    .join-link {
+                        display: block;
+                        background: linear-gradient(103.82deg, #DC3C08 8.53%, #E94915 32.28%, #F87700 84.53%);
+                        border-radius: 30px;
+                        height: 40px;
+                        width: 155px;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 16px;
+                        /* or 100% */
+                        text-align: center;
+                        color: #FFFFFF;
+                    }
+                }
+
+            }
+            li:last-child {
+                border: none!important;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .mobile-hidden {
+        display: none;
+    }
+}
+
+#profile-page {
+    .navbar {
+        height: 78px;
+        border: none!important;
+        a {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 24px;
+            color: #FFFFFF;
+        }
+    }
+    .info-block {
+        height: 150px;
+        .avatar {
+            width: 84px;
+            height: 84px;
+            border-radius: 100%;
+            margin-right: 30px;
+        }
+        .name-block {
+            .name {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 28px;
+                color: #FFFFFF;
+            }
+            small {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 17px;
+                color: #979BAA;
+            }
+            margin-right: 40px;
+        }
+        .game-btn {
+            background: linear-gradient(122.33deg, #DC3C08 9.23%, #E94915 44.64%, #F87700 93.17%);
+            border-radius: 49px;
+            height: 47px;
+            width: 165px;
+
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            color: #FFFFFF;
+        }
+    }
+}
+
+#my-league {
+    .header {
+        height: 72px;
+        margin-top: 15px;
+        background: linear-gradient(180deg, #0F1441 17.81%, #1E1D66 54.39%, #3B2561 100%);
+        padding: 15px 200px;
+        .header-logo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            img.logo {
+                margin-right: 10px;
+            }
+            .name-block {
+                h3 {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 18px;
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                }
+                small {
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                    line-height: 21px;
+                    color: #676CC2;
+                }
+            }
+        }
+    }
+    .link-list {
+        margin-bottom: 56px;
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            p {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 19px;
+                color: #FFFFFF;
+            }
+            a {
+                font-size: 15px;
+                font-weight: normal;
+                color: #FFFFFF;
+            }
+            border-top: 0.5px solid #5A5889;
+            padding: 13px;
+            &:last-child {
+                border-bottom: 0.5px solid #5A5889;
+            }
+        }
+    }
+    table.score-table {
+        height: 30px;
+        width: 375px;
+        thead {
+            background: #090B43;
+            th {
+                height: 30px;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 10px;
+                line-height: 12px;
+                letter-spacing: -0.02em;
+                text-transform: uppercase;
+                color: #676CC2;
+                padding: 9px 16px;
+            }
+        }
+        tbody {
+            tr {
+                border-bottom: 0.5px solid #5A5889;
+                td {
+                    padding: 10px;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #FFFFFF;
+
+                    div.east {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        span {
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 12px;
+                            line-height: 18px;
+                            text-align: right;
+                            text-transform: uppercase;
+                            color: #FFFFFF
+                        }
+                        img {
+                            margin-left: 9px;
+                            margin-right: 9px;
+                            height: 27.069543838500977px;
+                            width: 29.999980926513672px;
+                        }
+                        .name-block {
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 12px;
+                            line-height: 18px;
+                            text-align: center;
+                            text-transform: capitalize;
+                            color: #FFFFFF;
+                            small {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .score-board {
+        margin: auto;
+        margin-top: 60px;
+        margin-bottom: 24px;
+        width: 375px;
+        height: 62px;
+        background: #090B43;
+        font-style: normal;
+        text-align: center;
+        text-transform: capitalize;
+        color: #FFFFFF;
+        line-height: 18px;
+        padding: 22px 16px;
+        strong{
+            font-weight: 500;
+            font-size: 14px;
+        }
+        small {
+            font-weight: normal;
+            font-size: 12px;
+        }
+    }
+    .score-card {
+        padding: 22px 15px;
+        margin: 9px auto;
+        width: 375px;
+        background: linear-gradient(180deg, #FFFFFF 51.06%, #CCDEEF 95.81%, #4BA2F1 141.49%);
+        border-radius: 5px;
+        .score-team {
+            .name-block {
+                margin-left: 9px;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 18px;
+                text-align: left;
+                text-transform: capitalize;
+                color: #979BAA;
+                h5 {
+                    font-size: 16px;
+                }
+                small {
+                    font-size: 10px;
+                }
+            }
+            .team-score {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 18px;
+                text-transform: uppercase;
+                color: #0F1441;
+            }
+        }
+    }
+
 }

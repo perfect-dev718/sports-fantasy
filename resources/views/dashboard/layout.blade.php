@@ -44,16 +44,16 @@
 </head>
 <body>
 <div id="app" class="dashboard">
-    <header class="container-fluid row">
-        <div class="col-md-4 mobile-hidden sidebar-menu">
+    <header class="container-fluid row" style="padding-top: 100px">
+        <div class="col-4 mobile-hidden sidebar-menu">
             <a href="javascript: toggleMenu()">
                 <span class="fa fa-bars" id="toggle-btn" style="font-size: 40px; font-weight: bold; color: white"></span>
             </a>
         </div>
-        <div class="col-md-4 page-title">
+        <div class="col-4 page-title">
             @yield('pagetitle')
         </div>
-        <div class="col-md-4 page-title">
+        <div class="col-4 page-title">
             @yield('pageback')
         </div>
     </header>
@@ -71,7 +71,7 @@
                 <h6>{{__('Network')}}</h6>
             </div>
         </a>
-        <a>
+        <a href="{{ route('profile') }}">
             <div class="menu-items d-flex justify-content-start">
                 <span class="fa fa-user" style="font-size: 26px"></span>
                 <h6>{{__("User Profile")}}</h6>

@@ -10137,7 +10137,7 @@ h3 {
   height: 720px;
   width: 349px;
   left: 80px;
-  top: 64px;
+  top: 140px;
 }
 #app.dashboard .menu-block .menu-logo-border {
   border: 1px solid #2E58FF;
@@ -10547,6 +10547,80 @@ h3 {
   width: 46.2000045776px;
   margin-bottom: 20px;
 }
+#game-center .my-league-btn {
+  position: relative;
+  background: linear-gradient(180deg, #FFFFFF 51.06%, #CCDEEF 95.81%, #4BA2F1 141.49%);
+  border-radius: 5px;
+  height: 202px;
+  width: 307px;
+}
+#game-center .my-league-btn .header {
+  display: flex;
+  padding-left: 11px;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  height: 27px;
+  border-bottom: 0.5px solid #979BAA;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #979BAA;
+}
+#game-center .my-league-btn .footer {
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 27px;
+  border-top: 0.5px solid #979BAA;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  text-transform: capitalize;
+  color: #2E58FF;
+  text-align: center;
+  align-items: center;
+}
+#game-center .my-league-btn .content {
+  padding: 0 46px;
+}
+#game-center .my-league-btn .content .team-name {
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #0F1441;
+  margin-left: 9px;
+}
+#game-center .my-league-btn .content .desc {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  color: #979BAA;
+}
+#game-center .my-league-btn .content .day h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #0F1441;
+}
+#game-center .my-league-btn .content .day small {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #979BAA;
+}
 #game-center .public-league-btn {
   background: linear-gradient(122.33deg, rgba(220, 60, 8, 0.8) 9.23%, rgba(233, 73, 21, 0.8) 44.64%, rgba(248, 119, 0, 0.8) 93.17%);
   border: 1px solid #FFFFFF;
@@ -10668,4 +10742,351 @@ h3 {
   font-size: 16px;
   line-height: 19px;
   color: #FFFFFF;
+}
+
+@media (min-width: 576px) {
+  .league.modal .modal-dialog {
+    max-width: 500px;
+    margin: calc(50vh - 160px) auto;
+  }
+}
+.league.modal .modal-header {
+  border: none;
+}
+.league.modal .modal-header .close {
+  color: white;
+  opacity: 1;
+}
+.league.modal .modal-content {
+  border-radius: 30px;
+  background: #392461;
+  color: white;
+}
+.league.modal .modal-body .title {
+  font-weight: 500;
+  font-size: 24px !important;
+  line-height: 28px;
+  text-align: center;
+  margin-bottom: 54px;
+}
+.league.modal .modal-footer {
+  border: none;
+}
+.league.modal .create-btn {
+  background: linear-gradient(122.33deg, #DC3C08 9.23%, #E94915 44.64%, #F87700 93.17%);
+  border-radius: 30px;
+  height: 47px;
+  width: 301px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+#choose-league {
+  padding-top: 54px;
+}
+#choose-league .title {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  color: #FFFFFF;
+}
+#choose-league .content-block {
+  margin: auto;
+  margin-top: 33px;
+  width: 700px;
+  height: 665px;
+  border: 0.5px solid #5A5889;
+  box-sizing: border-box;
+  border-radius: 30px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#choose-league .content-block::-webkit-scrollbar {
+  display: none;
+}
+#choose-league .content-block::-webkit-scrollbar-track {
+  width: 8px;
+}
+#choose-league .content-block::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #5A5889;
+}
+#choose-league .content-block .content-list {
+  padding: 0;
+}
+#choose-league .content-block .content-list li {
+  border-bottom: 0.5px solid #5A5889;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#choose-league .content-block .content-list li .avatar-block {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+#choose-league .content-block .content-list li .avatar-block .avatar {
+  height: 55px;
+  width: 55px;
+  border-radius: 100%;
+}
+#choose-league .content-block .content-list li .name-block .name {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #FFFFFF;
+}
+#choose-league .content-block .content-list li .name-block .desc {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12.8px;
+  line-height: 15px;
+  color: #B7B6DC;
+}
+#choose-league .content-block .content-list li .action-block {
+  align-items: center;
+  padding-right: 28px;
+}
+#choose-league .content-block .content-list li .action-block .join-link {
+  display: block;
+  background: linear-gradient(103.82deg, #DC3C08 8.53%, #E94915 32.28%, #F87700 84.53%);
+  border-radius: 30px;
+  height: 40px;
+  width: 155px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  /* or 100% */
+  text-align: center;
+  color: #FFFFFF;
+}
+#choose-league .content-block .content-list li:last-child {
+  border: none !important;
+}
+
+@media screen and (max-width: 480px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+#profile-page .navbar {
+  height: 78px;
+  border: none !important;
+}
+#profile-page .navbar a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+#profile-page .info-block {
+  height: 150px;
+}
+#profile-page .info-block .avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 100%;
+  margin-right: 30px;
+}
+#profile-page .info-block .name-block {
+  margin-right: 40px;
+}
+#profile-page .info-block .name-block .name {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+}
+#profile-page .info-block .name-block small {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #979BAA;
+}
+#profile-page .info-block .game-btn {
+  background: linear-gradient(122.33deg, #DC3C08 9.23%, #E94915 44.64%, #F87700 93.17%);
+  border-radius: 49px;
+  height: 47px;
+  width: 165px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+#my-league .header {
+  height: 72px;
+  margin-top: 15px;
+  background: linear-gradient(180deg, #0F1441 17.81%, #1E1D66 54.39%, #3B2561 100%);
+  padding: 15px 200px;
+}
+#my-league .header .header-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#my-league .header .header-logo img.logo {
+  margin-right: 10px;
+}
+#my-league .header .header-logo .name-block h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+#my-league .header .header-logo .name-block small {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #676CC2;
+}
+#my-league .link-list {
+  margin-bottom: 56px;
+}
+#my-league .link-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.5px solid #5A5889;
+  padding: 13px;
+}
+#my-league .link-list li p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+#my-league .link-list li a {
+  font-size: 15px;
+  font-weight: normal;
+  color: #FFFFFF;
+}
+#my-league .link-list li:last-child {
+  border-bottom: 0.5px solid #5A5889;
+}
+#my-league table.score-table {
+  height: 30px;
+  width: 375px;
+}
+#my-league table.score-table thead {
+  background: #090B43;
+}
+#my-league table.score-table thead th {
+  height: 30px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #676CC2;
+  padding: 9px 16px;
+}
+#my-league table.score-table tbody tr {
+  border-bottom: 0.5px solid #5A5889;
+}
+#my-league table.score-table tbody tr td {
+  padding: 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+#my-league table.score-table tbody tr td div.east {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#my-league table.score-table tbody tr td div.east span {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: right;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+#my-league table.score-table tbody tr td div.east img {
+  margin-left: 9px;
+  margin-right: 9px;
+  height: 27.0695438385px;
+  width: 29.9999809265px;
+}
+#my-league table.score-table tbody tr td div.east .name-block {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #FFFFFF;
+}
+#my-league table.score-table tbody tr td div.east .name-block small {
+  font-size: 10px;
+}
+#my-league .score-board {
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 24px;
+  width: 375px;
+  height: 62px;
+  background: #090B43;
+  font-style: normal;
+  text-align: center;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  line-height: 18px;
+  padding: 22px 16px;
+}
+#my-league .score-board strong {
+  font-weight: 500;
+  font-size: 14px;
+}
+#my-league .score-board small {
+  font-weight: normal;
+  font-size: 12px;
+}
+#my-league .score-card {
+  padding: 22px 15px;
+  margin: 9px auto;
+  width: 375px;
+  background: linear-gradient(180deg, #FFFFFF 51.06%, #CCDEEF 95.81%, #4BA2F1 141.49%);
+  border-radius: 5px;
+}
+#my-league .score-card .score-team .name-block {
+  margin-left: 9px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+  text-align: left;
+  text-transform: capitalize;
+  color: #979BAA;
+}
+#my-league .score-card .score-team .name-block h5 {
+  font-size: 16px;
+}
+#my-league .score-card .score-team .name-block small {
+  font-size: 10px;
+}
+#my-league .score-card .score-team .team-score {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #0F1441;
 }

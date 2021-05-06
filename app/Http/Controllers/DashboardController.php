@@ -33,6 +33,13 @@ class DashboardController extends Controller
     }
 
     /**
+     * Choose a public league to join
+     */
+    public function choose_league() {
+        return view('dashboard.league.choose');
+    }
+
+    /**
      * choose League number
      */
     public function set_league_number() {
@@ -42,8 +49,8 @@ class DashboardController extends Controller
     /**
      * enter game center
      */
-    public function enter_game_center() {
-        return view('dashboard.game.center');
+    public function invite_public() {
+        return view('dashboard.game.invite_public');
     }
 
     /**
@@ -72,5 +79,30 @@ class DashboardController extends Controller
      */
     public function draft_order() {
         return view('dashboard.game.draft_order');
+    }
+
+    /**
+     * Profile page
+     */
+    public function profile() {
+        return view('dashboard.sidebar.profile');
+    }
+
+    /**
+     * Game center page
+     */
+    public function game_center() {
+        return view('dashboard.game.center');
+    }
+
+    /**
+     * My League page
+     */
+    public function my_league() {
+        return view('dashboard.game.my_league');
+    }
+
+    public function my_teams() {
+        return view('dashboard.game.my_teams');
     }
 }
