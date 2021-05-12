@@ -6,9 +6,6 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
@@ -35,10 +32,11 @@
 <body>
 <div id="app" class="dashboard">
     <header class="mobile-hidden d-flex justify-content-between">
-        <div class="col-md-6">
+        <div class="col-md-6 d-flex justify-content-start">
             <a href="/">
                 <img src="{{ asset('image/logo.svg') }}" class="logo">
             </a>
+            @yield('search')
         </div>
         <div class="col-md-3 d-flex justify-content-end link">
             <span class="fa fa-comment"></span>

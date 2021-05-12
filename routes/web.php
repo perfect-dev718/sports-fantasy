@@ -49,3 +49,7 @@ Route::get('profile', [DashboardController::class, 'profile'])->name('profile');
 Route::get('game/center', [DashboardController::class, 'game_center'])->name('game.center');
 Route::get('game/my-league', [DashboardController::class, 'my_league'])->name('game.my.league');
 Route::get('game/my-teams', [DashboardController::class, 'my_teams'])->name('game.my.teams');
+Route::get('game/players-free-agency', [DashboardController::class, 'players_free_agency'])->name('game.players.free.agency');
+Route::get('game/players-league-schedule', [DashboardController::class, 'league_schedule'])->name('game.league.schedule');
+Route::get('game/players-standings', [DashboardController::class, 'standings'])->name('game.standings');
+Route::get('game/players-offer-trade', [DashboardController::class, 'offer_trade'])->name('game.offer.trade');

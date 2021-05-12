@@ -18,7 +18,7 @@
 @section('content')
     <div class="container" id="profile-page">
         <div class="row navbar mobile-hidden justify-content-start">
-            <a href="#" class="link">My Teams</a>
+            <a href="{{ route('game.my.teams') }}" class="link">My Teams</a>
             <a href="#" class="link">Notifications</a>
         </div>
         <div class="row info-block justify-content-center">

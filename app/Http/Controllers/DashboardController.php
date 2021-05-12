@@ -105,4 +105,20 @@ class DashboardController extends Controller
     public function my_teams() {
         return view('dashboard.game.my_teams');
     }
+
+    public function players_free_agency() {
+        return view('dashboard.game.players_free_agency');
+    }
+
+    public function league_schedule() {
+        return view('dashboard.game.league_schedule');
+    }
+
+    public function standings() {
+        return view('dashboard.game.standings');
+    }
+
+    public function offer_trade() {
+        return view('dashboard.game.offer_trade');
+    }
 }
