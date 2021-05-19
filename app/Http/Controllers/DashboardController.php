@@ -8,7 +8,7 @@ class DashboardController extends Controller
 {
     //
     public function __construct() {
-
+        $this->middleware('auth');
     }
 
     /**
@@ -37,6 +37,34 @@ class DashboardController extends Controller
      */
     public function choose_league() {
         return view('dashboard.league.choose');
+    }
+
+    /**
+     * League Setting page
+     */
+    public function league_settings() {
+        return view('dashboard.league.settings');
+    }
+
+    /**
+     * League Scoreboard page
+     */
+    public function league_scoreboard() {
+        return view('dashboard.game.scoreboard');
+    }
+
+    /**
+     * League Manager
+     */
+    public function league_manager() {
+        return view('dashboard.league.manager');
+    }
+
+    /**
+     * League Information page
+     */
+    public function league_info() {
+        return view('dashboard.league.information');
     }
 
     /**
@@ -82,6 +110,13 @@ class DashboardController extends Controller
     }
 
     /**
+     * Draft format page
+     */
+    public function draft_format() {
+        return view('dashboard.game.draft_format');
+    }
+
+    /**
      * Profile page
      */
     public function profile() {
@@ -108,6 +143,41 @@ class DashboardController extends Controller
 
     public function players_free_agency() {
         return view('dashboard.game.players_free_agency');
+    }
+
+    public function players_info() {
+        return view('dashboard.game.players_info');
+    }
+
+    public function player_add() {
+        return view('dashboard.game.player_add');
+    }
+
+    public function confirm_team() {
+        return view('dashboard.game.team_confirm');
+    }
+
+    // team page
+    public function team_show() {
+        return view('dashboard.game.team_show');
+    }
+
+    // Play off team
+    public function team_play_off() {
+        return view('dashboard.game.team_play_off');
+    }
+
+    // Trade offer page
+    public function trade_offer() {
+        return view('dashboard.game.trade_offer');
+    }
+
+    public function condition_drop() {
+        return view('dashboard.game.condition_drop');
+    }
+
+    public function trade_recap() {
+        return view('dashboard.game.trade_recap');
     }
 
     public function league_schedule() {

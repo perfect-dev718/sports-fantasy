@@ -8,7 +8,7 @@
 @endsection
 
 @section('pagetitle')
-    {{__('My Teams')}}
+    {{__('Fantasy Football Draft Order')}}
 @endsection
 
 @section('pageback')
@@ -17,30 +17,39 @@
 
 @section('content')
     <div class="container-fluid" id="my-league">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-4">
             <div class="col-md-4">
                 <ul class="link-list">
-                    <a href="{{ route('game.players.free.agency') }}" class="text-decoration-none">
+                    <a href="{{ route('draft.format') }}" class="text-decoration-none">
                         <li>
-                            <p class="mb-0">Players Free Agency</p>
+                            <p class="mb-0">Draft Format</p>
                             <span class="fa fa-angle-right text-white font-16"></span>
                         </li>
                     </a>
-                    <a href="{{ route('game.league.schedule') }}" class="text-decoration-none">
+                    <a href="{{ route('game.team.play.off') }}" class="text-decoration-none">
                         <li>
-                            <p class="mb-0">League Schedule</p>
+                            <p class="mb-0">Play off Teams</p>
                             <span class="fa fa-angle-right text-white font-16"></span>
                         </li>
                     </a>
-                    <a href="{{ route('game.standings') }}" class="text-decoration-none">
+
+                    <a href="{{ route('league.scoreboard') }}" class="text-decoration-none">
                         <li>
-                            <p class="mb-0">Standings</p>
+                            <p class="mb-0">Scoreboard</p>
                             <span class="fa fa-angle-right text-white font-16"></span>
                         </li>
                     </a>
-                    <a href="{{ route('game.trade.offer') }}" class="text-decoration-none">
+
+                    <a href="{{ route('league.manager') }}" class="text-decoration-none">
                         <li>
-                            <p class="mb-0">Offer a Trade</p>
+                            <p class="mb-0">League Manager</p>
+                            <span class="fa fa-angle-right text-white font-16"></span>
+                        </li>
+                    </a>
+
+                    <a href="{{ route('league.info') }}" class="text-decoration-none">
+                        <li>
+                            <p class="mb-0">League Information</p>
                             <span class="fa fa-angle-right text-white font-16"></span>
                         </li>
                     </a>

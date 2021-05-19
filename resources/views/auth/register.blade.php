@@ -109,15 +109,18 @@
 @section('content')
     <div class="container">
         <div class="logo text-center">
-            <img src="{{ asset('image/logo.svg') }}" alt="sports fantasy logo">
+            <a href="{{ route('/') }}">
+                <img src="{{ asset('image/logo.svg') }}" alt="sports fantasy logo">
+            </a>
         </div>
         <form action="{{ route('register') }}" method="post">
+            {{ csrf_field() }}
             <div class="col-md-12 text-center d-flex justify-content-center">
-                <input class="form-control custom" placeholder="{{__('First Name')}}" name="firstName" id="firstName"
+                <input class="form-control custom" placeholder="{{__('First Name')}}" name="first_name" id="first_name"
                        required>
             </div>
             <div class="col-md-12 text-center d-flex justify-content-center">
-                <input class="form-control custom" placeholder="{{__('Last Name')}}" name="LastName" id="LastName"
+                <input class="form-control custom" placeholder="{{__('Last Name')}}" name="last_name" id="last_name"
                        required>
             </div>
             <div class="col-md-12 text-center d-flex justify-content-center">
@@ -129,7 +132,7 @@
                        type="password" required>
             </div>
             <div class="col-md-12 text-center d-flex justify-content-center">
-                <input class="form-control custom" placeholder="{{__('Confirm Password')}}" name="password_confirmation"
+                <input class="form-control custom" type="password" placeholder="{{__('Confirm Password')}}" name="password_confirmation"
                        id="password_confirmation">
             </div>
             <div class="col-md-12 text-center d-flex justify-content-center">
@@ -143,8 +146,8 @@
                 <select class="form-control custom half" name="gender" id="gender">
                     {{--                    <option>{{__('Gender')}}</option>--}}
                     <option value="" disabled selected>{{__("Gender")}}</option>
-                    <option value="female">Female</option>
                     <option value="male">Male</option>
+                    <option value="female">Female</option>
                 </select>
             </div>
             <div class="col-md-12 text-center d-flex justify-content-center">
@@ -155,10 +158,10 @@
             </div>
             <div class="col-md-12 text-center d-flex justify-content-center">
                 <input class="form-control custom half" placeholder="{{__('City')}}" name="city" id="city">
-                <input class="form-control custom half" placeholder="{{__('Zip Code')}}" name="zip" id="zip">
+                <input class="form-control custom half" placeholder="{{__('Zip Code')}}" name="zip_code" id="zip_code">
             </div>
             <div class="sign-btns text-center">
-                <button id="signupBtn" class="signup-btn">{{__("SIGN UP")}}</button>
+                <button id="signupBtn" type="submit" class="signup-btn">{{__("SIGN UP")}}</button>
             </div>
             <div class="col-md-12 text-center d-flex justify-content-center">
                 <div class="separator">Or</div>

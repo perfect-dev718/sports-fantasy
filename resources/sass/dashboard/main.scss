@@ -1,3 +1,58 @@
+.font-10 {
+    font-size: 10px;
+}
+
+font-12 {
+    font-size: 12px;
+}
+
+.font-14 {
+    font-size: 14px;
+}
+
+.font-16 {
+    font-size: 16px;
+}
+
+.font-18 {
+    font-size: 18px;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+.font-22 {
+    font-size: 22px;
+}
+
+.lh-18 {
+    line-height: 18px;
+}
+.lh-22 {
+    line-height: 22px;
+}
+.font-30 {
+    font-weight: 500;
+    font-size: 30px;
+}
+.lh-36 {
+    line-height: 36px;
+}
+
+.color-gray {
+    color: #979BAA;
+}
+
+select.no-border {
+    border: none;
+    background: transparent;
+}
+select.text-white {
+    option {
+        color: black;
+    }
+}
+
 .form-control.custom {
     height: 47px;
     width: 302px;
@@ -629,6 +684,148 @@
     }
 }
 
+#team_play_off {
+    table{
+        tr {
+            border: none;
+        }
+        th, td {
+            border-bottom: 0.5px solid #5A5889;
+        }
+        th{
+            background: #090B43;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 12px;
+            letter-spacing: -0.02em;
+            color: #676CC2
+        }
+        td {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 18px;
+            text-transform: capitalize;
+            color: #FFFFFF;
+        }
+    }
+}
+
+#league-info {
+    table{
+        thead {
+            border: none;
+        }
+        tr {
+            border: none;
+        }
+        th, td {
+            border-bottom: 0.5px solid #5A5889;
+        }
+        th{
+            background: #090B43;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 18px;
+            letter-spacing: -0.02em;
+            color: #676CC2;
+            border-top: none;
+        }
+        td {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            text-transform: capitalize;
+            color: #FFFFFF;
+            .round-input {
+                box-sizing: border-box;
+                border-radius: 19px;
+            }
+        }
+    }
+}
+
+#scoreboard {
+    .score-block {
+        width: 344px;
+        margin-bottom: 60px;
+        //height: 111px;
+        background: linear-gradient(180deg, #FFFFFF 51.06%, #CCDEEF 95.81%, #4BA2F1 141.49%);
+        border-radius: 5px;
+        padding: 20px 15px;
+        .score-item{
+            .name-block {
+                margin-left: 8px;
+            }
+            &:first-child {
+                margin-bottom: 9px;
+            }
+            &:last-child {
+                margin-top: 9px;
+            }
+        }
+
+    }
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+        &:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+    }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+        &:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+        &:before {
+            border-radius: 50%;
+        }
+    }
+}
+
 #main-dashboard {
     header {
         padding: 10px;
@@ -1048,7 +1245,21 @@
             }
         }
     }
+    .datepicker, .timepicker {
+        width: 100%;
+        background: rgba(103, 108, 194, 0.4);
+        border: 1px solid #676CC2;
+        box-sizing: border-box;
+        border-radius: 14px;
+        color: white;
+    }
+}
 
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
 }
 
 .top-search-block {
@@ -1120,6 +1331,14 @@
     }
 
     .table-block {
+        .content-table {
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            height: 80vh;
+            overflow-y: auto;
+            border-bottom: 0.5px solid white;
+        }
         color: white!important;
         padding-left: 70px;
         padding-right: 30px;
@@ -1148,6 +1367,7 @@
             }
         }
         table {
+            border: none;
             thead {
                 background: #090B43;
                 border: none;
@@ -1185,6 +1405,353 @@
                     color: #0F1441;
                 }
             }
+        }
+    }
+
+    .profile-block {
+        margin: 30px 50px;
+        border: 0.5px solid #5A5889;
+        box-sizing: border-box;
+        border-radius: 30px;
+        padding: 40px 60px;
+        .title {
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 18px;
+            color: #FFFFFF;
+            margin-bottom: 40px;
+        }
+        .photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 100%;
+        }
+        .name-block {
+            color: #E7E7E7;
+            .name {
+                font-weight: 500;
+                font-size: 20px;
+            }
+            .city {
+                font-size: 12px;
+                line-height: 20px;
+                text-transform: uppercase;
+            }
+            .position-text {
+                font-size: 10px;
+                line-height: 20px;
+                text-transform: uppercase;
+            }
+        }
+        button {
+            width: 168px;
+            height: 47px;
+            &.plus-btn {
+                background: linear-gradient(93.66deg, #DC3C08 10.06%, #E94915 40.54%, #F87700 92.48%);
+                border-radius: 23.5px;
+            }
+            &.flag-btn {
+                background: linear-gradient(180deg, #FFFFFF 51.06%, #4BA2F1 135.11%);
+                border-radius: 23.5px;
+            }
+        }
+        .pos-block {
+            color: white;
+            .item {
+                border-right: 0.5px solid #5A5889;
+                padding: 5px 26px;
+                &:last-child{
+                    border-right: none;
+                }
+            }
+
+        }
+        .season-block {
+            margin-top: 16px;
+            .title {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 18px;
+                margin-bottom: 7px;
+            }
+            table {
+                color: white;
+            }
+        }
+        .outlook-block {
+            color: white;
+            .points {
+                background: #090B43;
+                width: 100%;
+                height: 30px;
+                padding: 9px;
+                font-weight: 500;
+                font-size: 10px;
+                line-height: 12px;
+                letter-spacing: -0.02em;
+                text-transform: capitalize;
+                color: #676CC2;
+                margin-bottom: 14px;
+            }
+            .content {
+                font-size: 12px;
+                line-height: 18px;
+                color: #FFFFFF;
+            }
+        }
+    }
+}
+
+#player-add-drop {
+    .title {
+        color: white;
+    }
+    .table-header {
+        background: #090B43;
+        padding: 12px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        table {
+            margin-bottom: 0!important;
+            border: none;
+            th {
+                color: #676CC2;
+                border: none;
+            }
+            thead {
+                background: #090B43;
+            }
+        }
+    }
+    .content-table {
+        border: 1px solid #5A5889;
+        table {
+            color: white;
+            td {
+
+            }
+        }
+        .starter-text {
+            color: #161850;
+        }
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        height: 80vh;
+        overflow-y: auto;
+        border-bottom: 0.5px solid white;
+        .drop-btn {
+            width: 168px;
+            height: 47px;
+            left: 418px;
+            top: 327px;
+            box-sizing: border-box;
+            border: 1px solid #E94915;
+            border-radius: 23.5px;
+            background: transparent;
+            color: #E94915;
+            &:hover {
+                color: white;
+                background: linear-gradient(93.66deg, #DC3C08 10.06%, #E94915 40.54%, #F87700 92.48%);
+            }
+        }
+    }
+
+    .next-btn {
+        background: linear-gradient(122.33deg, #DC3C08 9.23%, #E94915 44.64%, #F87700 93.17%);
+        border-radius: 30px;
+        height: 47px;
+        width: 301px;
+        color: white;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: uppercase;
+        margin-top: 40px;
+    }
+}
+
+
+#team-show {
+    color: white;
+
+    .week-select {
+        background: transparent;
+        color: white;
+        width: 150px;
+        height: 32px;
+        border: 1px solid #FFFFFF;
+        border-radius: 10px;
+        option {
+            color: black;
+        }
+    }
+
+    .summary-block {
+        padding: 10px 70px;
+        border-bottom: 0.5px solid #5A5889;
+        .logo-block {
+            .logo {
+                height: 80px;
+                width: 80px;
+                border-radius: 100%;
+                margin-right: 16px;
+            }
+        }
+    }
+
+    .next-btn {
+        background: linear-gradient(122.33deg, #DC3C08 9.23%, #E94915 44.64%, #F87700 93.17%);
+        border-radius: 30px;
+        height: 47px;
+        width: 301px;
+        color: white;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: uppercase;
+        margin-top: 40px;
+    }
+
+    .action-block {
+        height: 136px;
+        padding: 20px 70px;
+        .offer-btn {
+            color: white;
+            background: linear-gradient(93.66deg, #DC3C08 10.06%, #E94915 40.54%, #F87700 92.48%);
+            border-radius: 23.5px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            width: 168px;
+            height: 47px;
+            text-transform: capitalize;
+        }
+        .lineup-select {
+            width: 130px;
+            height: 32px;
+            border: 1px solid #FFFFFF;
+            border-radius: 30px;
+            color: white;
+            background: transparent;
+        }
+        .lineup-text {
+            color: white;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 18px;
+        }
+    }
+    .table-block {
+        table {
+            &.border {
+                border: 1px solid #5A5889!important;
+            }
+            border: none;
+            thead{
+                background: #090B43;
+                border: none;
+                th {
+                    border: none;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 17px;
+                    letter-spacing: -0.02em;
+                    color: #676CC2;
+                }
+            }
+            td {
+                color: white;
+                border: none;
+                border-bottom: 1.5px solid #5A5889;
+            }
+            .trade-btn {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+                text-transform: capitalize;
+                width: 168px;
+                height: 47px;
+                border-radius: 23.5px;
+                border: 1px solid #E94915;
+                background: transparent;
+                color: #E94915;
+                &:hover {
+                    color: white;
+                    background: linear-gradient(93.66deg, #DC3C08 10.06%, #E94915 40.54%, #F87700 92.48%);
+                }
+            }
+            .flag-btn {
+                width: 70px;
+                height: 47px;
+                background: linear-gradient(180deg, #FFFFFF 51.06%, #4BA2F1 135.11%);
+                border-radius: 23.5px;
+            }
+
+        }
+    }
+
+    .league-title-block {
+        background: linear-gradient(180deg, #0F1441 17.81%, #1E1D66 54.39%, #3B2561 100%);
+    }
+}
+
+#league-manager {
+    .round-select {
+        box-sizing: border-box;
+        border-radius: 19px;
+    }
+    .desc {
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        color: #6967A0;
+    }
+    .save-btn {
+        color: white;
+        width: 124px;
+        height: 47px;
+        background: linear-gradient(122.33deg, #DC3C08 9.23%, #E94915 44.64%, #F87700 93.17%);
+        border-radius: 23.5px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+    }
+    .cancel-btn {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #0F1441;
+        width: 124px;
+        height: 47px;
+        background: linear-gradient(180deg, #FFFFFF 51.06%, #CCDEEF 95.81%, #4BA2F1 141.49%);
+        border-radius: 23.5px;
+    }
+
+    .slider-block {
+        height: 200px;
+        .image-block {
+            padding: 40px 20px;
+            box-sizing: border-box;
+            border-radius: 14px;
+            width: 100%;
+            background: linear-gradient(180deg, #0F1441 17.81%, #1E1D66 54.39%, #3B2561 100%);
+            border: 0.5px solid #5A5889;
+            img {
+                height: 80px;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+        .arrow-icon {
+            font-size: 30px; color: #6967A0;
+            cursor: pointer;
         }
     }
 }

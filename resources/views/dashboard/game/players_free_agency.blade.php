@@ -79,7 +79,7 @@
                 </div>
             </div>
 
-            <div class="table-responsive">
+            <div class="">
                 <table class="table table-bordered dataTable">
                     <colgroup>
                         <col width="20%">
@@ -125,7 +125,9 @@
                             <td>
                                 <div class="d-flex">
                                     <div class="col-5">
-                                        <img src="/image/player1.png" class="avatar rounded-circle">
+                                        <a href="{{ route('game.players.info') }}">
+                                            <img src="/image/player1.png" class="avatar rounded-circle">
+                                        </a>
                                     </div>
                                     <div class="col-7">
                                         <div class="name-block">

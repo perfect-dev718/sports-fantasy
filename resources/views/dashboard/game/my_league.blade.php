@@ -26,39 +26,42 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-4">
             <div class="col-md-4">
                 <ul class="link-list">
-                    <li>
-                        <p>League Schedule</p>
-                        <a>
-                            <span class="fa fa-angle-right"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <p>League Group Chat</p>
-                        <a>
-                            <span class="fa fa-angle-right"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <p>Scoreboard</p>
-                        <a>
-                            <span class="fa fa-angle-right"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <p>Standings</p>
-                        <a>
-                            <span class="fa fa-angle-right"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <p>League Settings</p>
-                        <a>
-                            <span class="fa fa-angle-right"></span>
-                        </a>
-                    </li>
+                    <a href="{{ route('game.league.schedule') }}" class="text-decoration-none">
+                        <li>
+                            <p class="mb-0">League Schedule</p>
+                            <span class="fa fa-angle-right text-white font-16"></span>
+                        </li>
+                    </a>
+                    <a href="#" class="text-decoration-none">
+                        <li>
+                            <p class="mb-0">League Group Chat</p>
+                            <span class="fa fa-angle-right text-white font-16"></span>
+                        </li>
+                    </a>
+
+                    <a href="{{ route('league.scoreboard') }}" class="text-decoration-none">
+                        <li>
+                            <p class="mb-0">Scoreboard</p>
+                            <span class="fa fa-angle-right text-white font-16"></span>
+                        </li>
+                    </a>
+
+                    <a href="{{ route('game.standings') }}" class="text-decoration-none">
+                        <li>
+                            <p class="mb-0">Standings</p>
+                            <span class="fa fa-angle-right text-white font-16"></span>
+                        </li>
+                    </a>
+
+                    <a href="{{ route('league.settings') }}" class="text-decoration-none">
+                        <li>
+                            <p class="mb-0">League Settings</p>
+                            <span class="fa fa-angle-right text-white font-16"></span>
+                        </li>
+                    </a>
                 </ul>
             </div>
         </div>

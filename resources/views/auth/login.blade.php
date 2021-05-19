@@ -10,7 +10,9 @@
 @section('content')
     <div class="container" id="login-page">
         <div class="logo text-center">
-            <img src="{{ asset('image/logo.svg') }}" alt="sports fantasy logo">
+            <a href="{{ route('/') }}">
+                <img src="{{ asset('image/logo.svg') }}" alt="sports fantasy logo">
+            </a>
         </div>
         <form action="{{ route('login') }}" method="post">
             {!! csrf_field() !!}
@@ -25,8 +27,8 @@
             <div class="row text-center d-flex justify-content-center form-group">
                 <div class="form-group custom d-flex justify-content-between" style="width: 302px">
                     <div class="form-check">
-                        <input class="form-check-input custom" placeholder="{{__('Password')}}" name="remember" id="remember"
-                               type="checkbox" required>
+                        <input class="form-check-input custom" name="remember" id="remember"
+                               type="checkbox">
                         <label class="form-check-label" style="color: white" for="remember">
                             {{ __('Remember Me') }}
                         </label>
@@ -37,7 +39,7 @@
                 </div>
             </div>
             <div class="sign-btns text-center">
-                <button id="signInBtn" type="button" class="signup-btn">{{__("LOG IN")}}</button>
+                <button id="signInBtn" type="submit" class="signup-btn">{{__("LOG IN")}}</button>
             </div>
             <div class="col-md-12 text-center d-flex justify-content-center">
                 <div class="separator">Or</div>
