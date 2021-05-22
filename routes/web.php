@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,3 +73,13 @@ Route::get('game/trade/recap', [DashboardController::class, 'trade_recap'])->nam
 Route::get('game/players-league-schedule', [DashboardController::class, 'league_schedule'])->name('game.league.schedule');
 Route::get('game/players-standings', [DashboardController::class, 'standings'])->name('game.standings');
 
+
+/*********************************** Admin Dashboard ***********************/
+Route::prefix('admin')->group(function(){
+   Route::get('/', [AdminController::class, 'index'])->name('admin');
+   Route::get('/users', [UserController::class, 'index'])->name('user.admin');
+   Route::get('/users/edit', [UserController::class, 'edit'])->name('user.edit');
+   Route::post('/users/delete', [UserController::class, 'delete'])->name('user.delete');
+   Route::post('/users/store', [UserController::class, 'store'])->name('user.store');
+   Route::post('/users/update', [UserController::class, 'update'])->name('user.update');
+});
