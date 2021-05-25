@@ -17,7 +17,7 @@ class CreateTeamsTable extends Migration
             $table->id();
             $table->string('name', 255);
             $table->bigInteger('userId');
-            $table->bigInteger('devisionId');
+            $table->bigInteger('divisionId');
             $table->string('WLT')->nullable();
             $table->float('Points')->nullable();
             $table->string('Streak')->nullable();

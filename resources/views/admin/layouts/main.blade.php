@@ -159,6 +159,40 @@
                             <p>Users</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('sport.admin') }}" class="nav-link @if($url==='sport') active @endif">
+                            <i class="nav-icon fa fa-gamepad"></i>
+                            <p>Sports</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('division.admin') }}" class="nav-link @if($url==='division') active @endif">
+                            <i class="nav-icon fa fa-group"></i>
+                            <p>Divisions</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('league.admin') }}" class="nav-link @if($url==='league') active @endif">
+                            <i class="nav-icon fa fa-dashboard"></i>
+                            <p>Leagues</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('team.admin') }}" class="nav-link @if($url==='team') active @endif">
+                            <i class="nav-icon fa fa-group"></i>
+                            <p>Teams</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('matchup.admin') }}" class="nav-link @if($url==='matchup') active @endif">
+                            <i class="nav-icon fa fa-gamepad"></i>
+                            <p>MatchUps</p>
+                        </a>
+                    </li>
+
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -184,6 +218,7 @@
                 </div>
             </div><!-- /.container-fluid -->
         </section>
+
         @yield('content')
     </div>
     <!-- /.content-wrapper -->

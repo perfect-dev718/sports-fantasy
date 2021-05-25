@@ -29,7 +29,7 @@
             <div class="card-body row">
                 <div class="col-md-12">
                     @if(Session::has('success'))
-                        <x-alert :type="'success'" :message="$Session::get('success')"></x-alert>
+                        <x-alert :type="'success'" :message="Session::get('success')"></x-alert>
                     @endif
                     @if($errors->any())
                         <x-alert :type="'danger'" :message="$errors->first()"></x-alert>

@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Helper\Helper;
-use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Division;
+use App\Models\League;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Admin\AdminController;
 
-class UserController extends AdminController
+class DivisionController extends AdminController
 {
     /**
      * Create a new controller instance.
@@ -23,54 +21,56 @@ class UserController extends AdminController
     //
     public function index(Request $request)
     {
-        $users = User::where("role", '<>', 'admin' )->get();
-        return view('admin.users.list', compact('users'));
-//        return view('admin.articles.list');
+        $divisions = Division::orderBy('name', 'asc')->get();
+        return view('admin.divisions.list', compact('divisions'));
     }
 
     public function create()
     {
-        return view('admin.users.create');
+        $leagues = League::orderBy('name', 'asc')->get();
+        return view('admin.divisions.create', compact('leagues'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'email'=>"email"
+            'name'=>"required|unique:divisions"
         ]);
         $params = $request->all();
         unset($params['id']);
-        User::create($params);
+        Division::create($params);
         return redirect()->back()->with('success', 'Saved successfully');
     }
 
     public function edit(Request $request)
     {
-        $user = User::find($request->get("id"));
-        return view('admin.users.create', compact("user"));
+        $leagues = League::orderBy('name', 'asc')->get();
+        $division = Division::find($request->get("id"));
+        return view('admin.divisions.create', compact("division", 'leagues'));
     }
 
     public function update(Request $request)
     {
         $request->validate([
-            'id'=>'exists:users',
-            'email'=>"email"
+            'id'=>'exists:divisions',
+            'name'=>"required|unique:divisions,name,".$request->get('id')
         ]);
         $params = $request->all();
         $id = $params['id'];
-        $user = User::find($id);
+        $division = Division::find($id);
+        unset($params['_token']);
         foreach ($params as $key=>$val)
         {
-            $user->$key = $val;
+            $division->$key = $val;
         }
-        $user->save();
+        $division->save();
         return redirect()->back()->with('success', 'Saved successfully');
     }
 
     public function delete(Request $request)
     {
-        $user = User::find($request->input('id'));
-        $user->delete();
-        return redirect()->route('user.index');
+        $division = Division::find($request->input('id'));
+        $division->delete();
+        return redirect()->route('division.index');
     }
 }

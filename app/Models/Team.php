@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+
+    public function league() {
+        return $this->hasOne(League::class, 'id', 'leagueId');
+    }
+
+    public function division() {
+        return $this->hasOne(Division::class, 'id', 'divisionId');
+    }
 }

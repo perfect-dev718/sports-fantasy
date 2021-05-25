@@ -6,6 +6,12 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\admin\SportController;
+use App\Http\Controllers\admin\DivisionController;
+use App\Http\Controllers\admin\LeagueController;
+use App\Http\Controllers\admin\TeamController;
+use App\Http\Controllers\admin\MatchupController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +27,7 @@ Route::get('/', [LandingController::class, 'index'])->name('/');
 
 Auth::routes();
 
-Route::get('/clear', function (){
+Route::get('/clear', function () {
     Artisan::call('cache:clear');
     Artisan::call('view:clear');
     return '<H1>Cache Cleared</H1><br><a href="/">back home</a>';
@@ -75,11 +81,48 @@ Route::get('game/players-standings', [DashboardController::class, 'standings'])-
 
 
 /*********************************** Admin Dashboard ***********************/
-Route::prefix('admin')->group(function(){
-   Route::get('/', [AdminController::class, 'index'])->name('admin');
-   Route::get('/users', [UserController::class, 'index'])->name('user.admin');
-   Route::get('/users/edit', [UserController::class, 'edit'])->name('user.edit');
-   Route::post('/users/delete', [UserController::class, 'delete'])->name('user.delete');
-   Route::post('/users/store', [UserController::class, 'store'])->name('user.store');
-   Route::post('/users/update', [UserController::class, 'update'])->name('user.update');
+
+Route::prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin');
+    Route::get('/users', [UserController::class, 'index'])->name('user.admin');
+    Route::get('/users/edit', [UserController::class, 'edit'])->name('user.edit');
+    Route::post('/users/store', [UserController::class, 'store'])->name('user.store');
+    Route::post('/users/update', [UserController::class, 'update'])->name('user.update');
+    Route::post('/users/delete', [UserController::class, 'delete'])->name('user.delete');
+
+    Route::get('/sports', [SportController::class, 'index'])->name('sport.admin');
+    Route::get('/sports/create', [SportController::class, 'create'])->name('sport.create');
+    Route::get('/sports/edit', [SportController::class, 'edit'])->name('sport.edit');
+    Route::post('/sports/store', [SportController::class, 'store'])->name('sport.store');
+    Route::post('/sports/update', [SportController::class, 'update'])->name('sport.update');
+    Route::post('/sports/delete', [SportController::class, 'delete'])->name('sport.delete');
+
+    Route::get('/divisions', [DivisionController::class, 'index'])->name('division.admin');
+    Route::get('/division/create', [DivisionController::class, 'create'])->name('division.create');
+    Route::get('/division/edit', [DivisionController::class, 'edit'])->name('division.edit');
+    Route::post('/division/store', [DivisionController::class, 'store'])->name('division.store');
+    Route::post('/division/update', [DivisionController::class, 'update'])->name('division.update');
+    Route::post('/division/delete', [DivisionController::class, 'delete'])->name('division.delete');
+
+    Route::get('/leagues', [LeagueController::class, 'index'])->name('league.admin');
+    Route::get('/league/create', [LeagueController::class, 'create'])->name('league.create');
+    Route::get('/league/edit', [LeagueController::class, 'edit'])->name('league.edit');
+    Route::post('/league/store', [LeagueController::class, 'store'])->name('league.store');
+    Route::post('/league/update', [LeagueController::class, 'update'])->name('league.update');
+    Route::post('/league/delete', [LeagueController::class, 'delete'])->name('league.delete');
+
+    Route::get('/teams', [TeamController::class, 'index'])->name('team.admin');
+    Route::get('/team/create', [TeamController::class, 'create'])->name('team.create');
+    Route::get('/team/edit', [TeamController::class, 'edit'])->name('team.edit');
+    Route::post('/team/store', [TeamController::class, 'store'])->name('team.store');
+    Route::post('/team/update', [TeamController::class, 'update'])->name('team.update');
+    Route::post('/team/delete', [TeamController::class, 'delete'])->name('team.delete');
+
+    Route::get('/matchups', [MatchupController::class, 'index'])->name('matchup.admin');
+    Route::get('/matchup/create', [MatchupController::class, 'create'])->name('matchup.create');
+    Route::get('/matchup/edit', [MatchupController::class, 'edit'])->name('matchup.edit');
+    Route::post('/matchup/store', [MatchupController::class, 'store'])->name('matchup.store');
+    Route::post('/matchup/update', [MatchupController::class, 'update'])->name('matchup.update');
+    Route::post('/matchup/delete', [MatchupController::class, 'delete'])->name('matchup.delete');
+
 });
