@@ -18,7 +18,11 @@
 @section('content')
     <div class="container-fluid row d-flex justify-content-center" id="name-league">
         <div class="col-md-4 col-12">
-            <form class="text-center">
+            @if($errors->any())
+                <x-alert :type="'danger'" :message="$errors->first()"></x-alert>
+            @endif
+            <form class="text-center" method="post" action="{{ route('league.name.save') }}">
+                {!! csrf_field() !!}
                 <select class="form-control">
                     <option value="" selected disabled>Playoff Team Name</option>
                     <option value="team1">Team1</option>
@@ -30,7 +34,7 @@
                     <option value="team1">Team1</option>
                     <option value="team2">Team2</option>
                 </select>
-                <button type="button" class="create-btn" id="confirmBtn">{{__('confirm')}}</button>
+                <button type="submit" class="create-btn" id="confirmBtn">{{__('confirm')}}</button>
             </form>
         </div>
     </div>
@@ -39,9 +43,9 @@
 @section('script')
     <script>
         $(function (){
-            $('#confirmBtn').click(function (){
-                location.href = "{{ route('loague.number') }}";
-            })
+            {{--$('#confirmBtn').click(function (){--}}
+            {{--    location.href = "{{ route('league.number') }}";--}}
+            {{--})--}}
         });
     </script>
 @endsection

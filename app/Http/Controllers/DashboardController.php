@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\League;
+use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -23,6 +26,19 @@ class DashboardController extends Controller
      */
     public function set_league_name() {
         return view('dashboard.league.name');
+    }
+
+    /**
+     * Save League name
+     */
+    public function save_league_name(Request $request) {
+        $request->validate([
+            'name'=>"required|unique:leagues"
+        ]);
+        $params = $request->all();
+        $params['userId'] = Auth::user()->id;
+        $league = League::create($params);
+        return redirect()->route('league.number', ['id'=>$league->id]);
     }
 
     /**
@@ -70,8 +86,25 @@ class DashboardController extends Controller
     /**
      * choose League number
      */
-    public function set_league_number() {
-        return view('dashboard.league.number');
+    public function set_league_number(Request $request) {
+        $teams = Team::all();
+        $id = $request->get('id');
+        return view('dashboard.league.number', compact('teams', 'id'));
+    }
+
+    /**
+     * save team id of league
+     */
+    public function save_league_number(Request $request) {
+        $request->validate([
+            'id'=>"required|exists:leagues"
+        ]);
+        $teamId = $request->get('teamId');
+        $leagueId = $request->get('id');
+        $league = League::find($leagueId);
+        $league->teamId = $teamId;
+        $league->save();
+        return redirect()->route('invite.public');
     }
 
     /**

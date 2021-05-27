@@ -38,8 +38,10 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/forgotten', [LandingController::class, 'forgot'])->name('forgotten');
 Route::get('/password-reset', [LandingController::class, 'reset_password'])->name('password-reset');
 
-Route::get('league', [DashboardController::class, 'create_league'])->name('league.create');
+Route::get('league', [DashboardController::class, 'create_league'])->name('league.create.user');
 Route::get('league/name', [DashboardController::class, 'set_league_name'])->name('league.name');
+Route::post('league/name/save', [DashboardController::class, 'save_league_name'])->name('league.name.save');
+
 Route::get('league/join', [DashboardController::class, 'join_league'])->name('league.join');
 Route::get('league/choose', [DashboardController::class, 'choose_league'])->name('league.choose');
 Route::get('league/settings', [DashboardController::class, 'league_settings'])->name('league.settings');
@@ -48,7 +50,9 @@ Route::get('league/manager', [DashboardController::class, 'league_manager'])->na
 Route::get('league/information', [DashboardController::class, 'league_info'])->name('league.info');
 
 
-Route::get('league/number', [DashboardController::class, 'set_league_number'])->name('loague.number');
+Route::get('league/number', [DashboardController::class, 'set_league_number'])->name('league.number');
+Route::post('league/number/save', [DashboardController::class, 'save_league_number'])->name('league.number.save');
+
 Route::get('invite/public', [DashboardController::class, 'invite_public'])->name('invite.public');
 Route::get('invite/friend', [DashboardController::class, 'invite_friend'])->name('invite.friend');
 Route::get('game/profile', [DashboardController::class, 'game_profile'])->name('game.profile');

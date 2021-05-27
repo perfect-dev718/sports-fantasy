@@ -18,18 +18,17 @@
 @section('content')
     <div class="container-fluid row d-flex justify-content-center" id="name-league">
         <div class="col-md-4 col-12">
-            <form class="text-center">
+            <form class="text-center" action="{{ route('league.number.save') }}" method="post">
+                {!! csrf_field() !!}
+                <input type="hidden" value="{{ $id }}" name="id">
                 <h3 class="subtitle">{{__('Choose a Number of Teams')}}</h3>
+                <input type="hidden" name="teamId" id="teamId">
                 <div class="btn-list d-flex justify-content-between">
-                    <button type="button" class="number">8</button>
-                    <button type="button" class="number">10</button>
-                    <button type="button" class="number">12</button>
-                    <button type="button" class="number">14</button>
-                    <button type="button" class="number">16</button>
-                    <button type="button" class="number">18</button>
-                    <button type="button" class="number">20</button>
+                    @foreach($teams as $team)
+                        <button type="button" class="number">{{ $team->id }}</button>
+                    @endforeach
                 </div>
-                <button type="button" class="create-btn" id="confirmBtn">{{__('confirm')}}</button>
+                <button type="submit" class="create-btn" id="confirmBtn">{{__('confirm')}}</button>
             </form>
         </div>
     </div>
@@ -38,15 +37,16 @@
 @section('script')
     <script>
         $(function (){
-            $('#confirmBtn').click(function (){
-                location.href = "{{ route('invite.public') }}";
-            })
+            // $('#confirmBtn').click(function (){
+                {{--location.href = "{{ route('invite.public') }}";--}}
+            // })
 
             $('.number').click(function (){
-                if($(this).hasClass('active')){
-                    $(this).removeClass('active');
-                } else {
+                var flag = $(this).hasClass('active');
+                $('.number').removeClass('active');
+                if(!flag) {
                     $(this).addClass('active');
+                    $('#teamId').val(parseInt($(this).text().trim()));
                 }
             });
         });

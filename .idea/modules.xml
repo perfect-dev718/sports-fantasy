@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../../moon/source/photoquote-laravel/.idea/photoquote.iml" filepath="$PROJECT_DIR$/../../../../moon/source/photoquote-laravel/.idea/photoquote.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/sports-fantasy-web.iml" filepath="$PROJECT_DIR$/.idea/sports-fantasy-web.iml" />
     </modules>
   </component>
