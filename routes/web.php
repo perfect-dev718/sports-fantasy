@@ -11,7 +11,8 @@ use App\Http\Controllers\admin\DivisionController;
 use App\Http\Controllers\admin\LeagueController;
 use App\Http\Controllers\admin\TeamController;
 use App\Http\Controllers\admin\MatchupController;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Artisan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,8 +29,8 @@ Route::get('/', [LandingController::class, 'index'])->name('/');
 Auth::routes();
 
 Route::get('/clear', function () {
-    Artisan::call('cache:clear');
-    Artisan::call('view:clear');
+    Artisan::call('optimize:clear');
+//    Artisan::call('view:clear');
     return '<H1>Cache Cleared</H1><br><a href="/">back home</a>';
 });
 
