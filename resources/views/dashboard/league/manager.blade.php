@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-8">
                         <div class="image-block">
-                            <img src="/storage/league1.png">
+                            <img src="/image/league1.png">
                         </div>
                     </div>
                     <div class="col-2 justify-content-start d-flex align-items-center p-3">

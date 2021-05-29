@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LandingController extends Controller
 {
@@ -13,7 +14,11 @@ class LandingController extends Controller
     }
 
     public function index(){
-        return view('land.index');
+        if(Auth::check()) {
+            return redirect()->route('league.create.user');
+        }else{
+            return view('land.index');
+        }
     }
 
     public function forgot(Request $request) {
