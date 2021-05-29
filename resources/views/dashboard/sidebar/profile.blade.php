@@ -23,7 +23,7 @@
         </div>
         <div class="row info-block justify-content-center">
             <div class="col-8 d-flex justify-content-center align-items-center">
-                <img src="/storage/photo.svg" alt="My photo" class="avatar">
+                <img src="/image/photo.svg" alt="My photo" class="avatar">
                 <div class="name-block">
                     <h4 class="name">Mark Sinatra</h4>
                     <small>Position</small>
