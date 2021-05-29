@@ -6,11 +6,11 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\admin\SportController;
-use App\Http\Controllers\admin\DivisionController;
-use App\Http\Controllers\admin\LeagueController;
-use App\Http\Controllers\admin\TeamController;
-use App\Http\Controllers\admin\MatchupController;
+use App\Http\Controllers\Admin\SportController;
+use App\Http\Controllers\Admin\DivisionController;
+use App\Http\Controllers\Admin\LeagueController;
+use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\MatchupController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Artisan;
 /*
