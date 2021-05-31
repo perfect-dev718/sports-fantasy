@@ -19,11 +19,12 @@
     <div class="container-fluid" id="my-league">
         <div class="header">
             <div class="header-logo">
-                <img src="/image/logo3.svg" class="logo">
-                <div class="name-block text-left">
-                    <h3>League Name</h3>
-                    <small>Big888</small>
-                </div>
+                <img src="/image/noborder-team.svg" class="logo">
+                <select class="no-border text-white font-20 lh-18 font-weight-bold">
+                    @foreach($leagues as $league)
+                        <option value="{{ $league->id }}">{{ $league->name }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="row justify-content-center mt-4">

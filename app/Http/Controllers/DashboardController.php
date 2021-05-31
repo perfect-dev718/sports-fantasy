@@ -167,7 +167,12 @@ class DashboardController extends Controller
      * My League page
      */
     public function my_league() {
-        return view('dashboard.game.my_league');
+        $leagues = League::where('userId', Auth::user()->id)->get();
+        if(count($leagues) > 0) {
+            return view('dashboard.game.my_league', compact('leagues'));
+        }else{
+            return redirect()->route('league.create.user');
+        }
     }
 
     public function my_teams() {

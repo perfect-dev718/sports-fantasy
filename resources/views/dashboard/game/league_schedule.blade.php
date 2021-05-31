@@ -43,14 +43,14 @@
                         <div class="">
                             <table class="table table-bordered dataTable border">
                                 <thead>
-                                <th>MATCHUP</th>
+                                <th>Week</th>
                                 <th>Score</th>
                                 <th>Opponent</th>
                                 <tbody>
                                 <!-- content block -->
                                 @for($i = 0; $i<15; $i++)
                                     <tr>
-                                        <td>MAR 26 - June 21</td>
+                                        <td>Week {{ $i+1 }}</td>
                                         <td>T 0-0-10</td>
                                         <td><strong>at</strong> Team 7</td>
                                     </tr>
@@ -65,14 +65,14 @@
                         <div class="">
                             <table class="table table-bordered dataTable border">
                                 <thead>
-                                <th>MATCHUP</th>
+                                <th>Week</th>
                                 <th>Score</th>
                                 <th>Opponent</th>
                                 <tbody>
                                 <!-- content block -->
                                 @for($i = 0; $i<15; $i++)
                                     <tr>
-                                        <td>MAR 26 - June 21</td>
+                                        <td>Week {{$i + 16}}</td>
                                         <td>T 0-0-10</td>
                                         <td><strong>at</strong> Team 7</td>
                                     </tr>
