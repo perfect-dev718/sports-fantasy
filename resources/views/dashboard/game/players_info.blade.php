@@ -48,22 +48,21 @@
                                 <col width="20%">
                             </colgroup>
                             <tbody>
-
                             <!-- content block -->
-                            @for($i = 0; $i<10; $i++)
+                            @foreach($players as $player)
                                 <tr>
                                     <td>
                                         <div class="d-flex">
                                             <div class="col-4" style="background: #484773;">
-                                                RB/<br>WR
+                                                {{ $player->position }}
                                             </div>
                                             <div class="col-4">
                                                 <img src="/image/player1.png" class="avatar rounded-circle">
                                             </div>
                                             <div class="col-4">
                                                 <div class="name-block">
-                                                    <h4 class="name">Le’Veon Bell</h4>
-                                                    <small>NYJ RB</small>
+                                                    <h4 class="name">{{ $player->full_name }}</h4>
+                                                    <small>{{ $player->name }} | {{ $player->position }}</small>
                                                 </div>
                                             </div>
                                         </div>
@@ -81,7 +80,7 @@
                                         -
                                     </td>
                                 </tr>
-                            @endfor
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -127,7 +126,7 @@
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">
-                        <button class="plus-btn" style="margin-right: 7px" id="add-btn">Add</button>
+                        <button class="plus-btn text-white" style="margin-right: 7px" id="add-btn">Add</button>
                         <button class="flag-btn"><span class="fa fa-flag" id="watch-btn"></span>&nbsp;Watch</button>
                     </div>
                     <div class="row season-block">

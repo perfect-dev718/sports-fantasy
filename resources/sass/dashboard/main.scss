@@ -1075,7 +1075,7 @@ select.text-white {
         height: 72px;
         margin-top: 15px;
         background: linear-gradient(180deg, #0F1441 17.81%, #1E1D66 54.39%, #3B2561 100%);
-        padding: 15px 200px;
+        padding: 20px 200px 15px 200px;
         .header-logo {
             display: flex;
             justify-content: flex-start;
@@ -1333,7 +1333,19 @@ input[type="radio"] {
     .table-block {
         .content-table {
             &::-webkit-scrollbar {
-                display: none;
+                //display: none;
+                width: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+                -webkit-border-radius: 10px;
+                border-radius: 10px;
+                background: #888;
+            }
+            &::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background: #555;
             }
             height: 80vh;
             overflow-y: auto;

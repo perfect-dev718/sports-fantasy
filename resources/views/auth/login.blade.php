@@ -22,7 +22,7 @@
             </div>
             <div class="col-md-12 text-center d-flex justify-content-center">
                 <input class="form-control custom" placeholder="{{__('Password')}}" name="password" id="password"
-                       type="password" required>
+                       type="password" required autocomplete="current-password">
             </div>
             <div class="row text-center d-flex justify-content-center form-group">
                 <div class="form-group custom d-flex justify-content-between" style="width: 302px">

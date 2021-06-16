@@ -18,13 +18,16 @@
 @section('content')
     <div class="container-fluid" id="my-league">
         <div class="header">
-            <div class="header-logo">
-                <img src="/image/noborder-team.svg" class="logo">
-                <select class="no-border text-white font-20 lh-18 font-weight-bold">
-                    @foreach($leagues as $league)
-                        <option value="{{ $league->id }}">{{ $league->name }}</option>
-                    @endforeach
-                </select>
+            <div class="header-logo justify-content-between align-items-center">
+                <div>
+                    <img src="/image/noborder-team.svg" class="logo">
+                    <select class="no-border text-white font-20 lh-18 font-weight-bold">
+                        @foreach($leagues as $league)
+                            <option value="{{ $league->id }}">{{ $league->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <a href="{{ route('league.name') }}" class="text-white font-weight-bold font-20" title="Create New League"><span class="fa fa-plus-circle"></span> Add</a>
             </div>
         </div>
         <div class="row justify-content-center mt-4">

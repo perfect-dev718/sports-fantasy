@@ -26,15 +26,15 @@
                 <div class="col-9 d-flex justify-content-start">
                     <label>Position: </label>
                     <ul>
-                        <li>All</li>
-                        <li>QB</li>
-                        <li>RB</li>
-                        <li>RB/WR</li>
-                        <li>WR</li>
-                        <li>WR/TE</li>
-                        <li>TE</li>
-                        <li>D/ST</li>
-                        <li>K</li>
+                        <li class="position" data-pos="all">All</li>
+                        <li class="position" data-pos="QB">QB</li>
+                        <li class="position" data-pos="RB">RB</li>
+                        <li class="position" data-pos="RB,WR">RB/WR</li>
+                        <li class="position" data-pos="WR">WR</li>
+                        <li class="position" data-pos="WR,TE">WR/TE</li>
+                        <li class="position" data-pos="TE">TE</li>
+                        <li class="position" data-pos="DEF">D/ST</li>
+                        <li class="position" data-pos="K">K</li>
                     </ul>
                 </div>
                 <div class="col-3 d-flex justify-content-end">
@@ -80,21 +80,31 @@
             </div>
 
             <div class="">
-                <table class="table table-bordered dataTable">
-                    <colgroup>
-                        <col width="20%">
-                        <col width="23%">
-                        <col width="27%">
-                        <col width="30%">
-                    </colgroup>
-                    <thead>
+                <div class="table-header">
+                    <table class="table table-bordered m-0">
+                        <colgroup>
+                            <col width="20%">
+                            <col width="23%">
+                            <col width="27%">
+                            <col width="30%">
+                        </colgroup>
+                        <thead>
                         <th>Players</th>
                         <th>Status</th>
                         <th>Week1</th>
                         <th>2020 Projections</th>
-                    </thead>
-                    <tbody>
-                        <tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="content-table">
+                    <table class="table table-bordered datatable">
+                        <colgroup>
+                            <col width="20%">
+                            <col width="23%">
+                            <col width="27%">
+                            <col width="30%">
+                        </colgroup>
+                        <thead>
                             <td>Player</td>
                             <td>
                                 <div class="d-flex">
@@ -118,57 +128,60 @@
                                     <div style="width: 25%">Last</div>
                                 </div>
                             </td>
-                        </tr>
+                        </thead>
+                        <tbody>
                         <!-- content block -->
-                        @for($i = 0; $i<10; $i++)
+                        @foreach($players as $player)
                             <tr>
-                            <td>
-                                <div class="d-flex">
-                                    <div class="col-5">
-                                        <a href="{{ route('game.players.info') }}">
-                                            <img src="/image/player1.png" class="avatar rounded-circle">
-                                        </a>
-                                    </div>
-                                    <div class="col-7">
-                                        <div class="name-block">
-                                            <h4 class="name">Le’Veon Bell</h4>
-                                            <small>NYJ RB</small>
+                                <td>
+                                    <div class="d-flex">
+                                        <div class="col-5">
+                                            <a href="{{ route('game.players.info', ["id"=>$player->id]) }}">
+                                                <img src="/image/player1.png" class="avatar rounded-circle">
+                                            </a>
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="name-block">
+                                                <h4 class="name">{{ $player->full_name }}</h4>
+                                                <small>{{$player->name}} | {{ $player->position }}</small>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex">
-                                    <div class="col-5">
-                                        <h5>WA (Thu)</h5>
+                                </td>
+                                <td>
+                                    <div class="d-flex">
+                                        <div class="col-5">
+                                            <h5>WA (Thu)</h5>
+                                        </div>
+                                        <div class="col-7 d-flex justify-content-center">
+                                            <button class="plus-btn"><span class="fa fa-plus"></span></button>
+                                            <button class="flag-btn"><span class="fa fa-flag"></span></button>
+                                        </div>
                                     </div>
-                                    <div class="col-7 d-flex justify-content-center">
-                                        <button class="plus-btn"><span class="fa fa-plus"></span></button>
-                                        <button class="flag-btn"><span class="fa fa-flag"></span></button>
+                                </td>
+                                <td>
+                                    <div class="d-flex">
+                                        <div style="width: 20%">-</div>
+                                        <div style="width: 30%">-</div>
+                                        <div style="width: 25%">-</div>
+                                        <div style="width: 25%">-</div>
                                     </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex">
-                                    <div style="width: 20%">Buf</div>
-                                    <div style="width: 30%">Sun 2:00 PM</div>
-                                    <div style="width: 25%">-</div>
-                                    <div style="width: 25%">-</div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex">
-                                    <div style="width: 25%">-</div>
-                                    <div style="width: 25%">317.2</div>
-                                    <div style="width: 25%">0.0</div>
-                                    <div style="width: 25%">-</div>
-                                </div>
-                            </td>
-                        </tr>
-                        @endfor
-                    </tbody>
-                </table>
+                                </td>
+                                <td>
+                                    <div class="d-flex">
+                                        <div style="width: 25%">-</div>
+                                        <div style="width: 25%">-</div>
+                                        <div style="width: 25%">-</div>
+                                        <div style="width: 25%">-</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
         </div>
     </div>
 

@@ -17,7 +17,22 @@
 
 @section('content')
     <div class="container-fluid" id="my-league">
-        <div class="row justify-content-center">
+        <div class="header">
+            <div class="header-logo justify-content-between align-items-center">
+                <div>
+                    <img src="/image/noborder-team.svg" class="logo">
+                    <select class="no-border text-white font-20 lh-18 font-weight-bold">
+                        <option value="">Choose Team</option>
+                        @foreach($teams as $team)
+                            <option value="{{ $team->id }}">{{ $team->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <a href="{{ route('game.team.create') }}" class="text-white font-weight-bold font-20"
+                   title="Create New Team"><span class="fa fa-plus-circle"></span> Add</a>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
             <div class="col-md-4">
                 <ul class="link-list">
                     <a href="{{ route('game.players.free.agency') }}" class="text-decoration-none">
