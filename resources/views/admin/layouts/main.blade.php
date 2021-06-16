@@ -156,9 +156,17 @@
                     <li class="nav-item">
                         <a href="{{ route('user.admin') }}" class="nav-link @if($url==='user') active @endif">
                             <i class="nav-icon fa fa-users"></i>
-                            <p>Users</p>
+                            <p>Owners</p>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('player.admin') }}" class="nav-link @if($url==='player') active @endif">
+                            <i class="nav-icon fa fa-user"></i>
+                            <p>Players</p>
+                        </a>
+                    </li>
+
                     <li class="nav-item">
                         <a href="{{ route('sport.admin') }}" class="nav-link @if($url==='sport') active @endif">
                             <i class="nav-icon fa fa-gamepad"></i>

@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\DivisionController;
 use App\Http\Controllers\Admin\LeagueController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\MatchupController;
+use App\Http\Controllers\Admin\PlayerController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Artisan;
 /*
@@ -68,9 +69,11 @@ Route::get('profile', [DashboardController::class, 'profile'])->name('profile');
 Route::get('game/center', [DashboardController::class, 'game_center'])->name('game.center');
 Route::get('game/my-league', [DashboardController::class, 'my_league'])->name('game.my.league');
 Route::get('game/my-teams', [DashboardController::class, 'my_teams'])->name('game.my.teams');
+Route::get('game/team/create', [DashboardController::class, 'team_create'])->name('game.team.create');
+Route::post('game/team/save', [DashboardController::class, 'team_save'])->name('game.team.name.save');
 
 Route::get('game/players-free-agency', [DashboardController::class, 'players_free_agency'])->name('game.players.free.agency');
-Route::get('game/player/info', [DashboardController::class, 'players_info'])->name('game.players.info');
+Route::get('game/player/info/{id}', [DashboardController::class, 'players_info'])->name('game.players.info');
 Route::get('game/player/add', [DashboardController::class, 'player_add'])->name('game.player.add');
 Route::get('game/team/confirm', [DashboardController::class, 'confirm_team'])->name('game.confirm.team');
 Route::get('game/team/show', [DashboardController::class, 'team_show'])->name('game.team.show');
@@ -129,5 +132,9 @@ Route::prefix('admin')->group(function () {
     Route::post('/matchup/store', [MatchupController::class, 'store'])->name('matchup.store');
     Route::post('/matchup/update', [MatchupController::class, 'update'])->name('matchup.update');
     Route::post('/matchup/delete', [MatchupController::class, 'delete'])->name('matchup.delete');
+
+    Route::get('/players', [PlayerController::class, 'index'])->name('player.admin');
+    Route::post('/players/delete', [PlayerController::class, 'delete'])->name('player.delete');
+    Route::post('/players/ajax', [PlayerController::class, 'getAjaxData'])->name('player.ajax');
 
 });

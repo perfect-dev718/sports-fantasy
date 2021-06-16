@@ -25,14 +25,17 @@
                 {!! csrf_field() !!}
                 <select class="form-control">
                     <option value="" selected disabled>Playoff Team Name</option>
-                    <option value="team1">Team1</option>
-                    <option value="team2">Team2</option>
+{{--                    <option value="team1">Team1</option>--}}
+{{--                    <option value="team2">Team2</option>--}}
+                    @foreach($teams as $team)
+                        <option value="{{ $team->id }}">{{ $team->name }}</option>
+                    @endforeach
                 </select>
                 <input class="form-control" placeholder="Enter Name Of the League" required name="name">
                 <select class="form-control">
                     <option value="" selected disabled>Playoff Tie-Breaker</option>
-                    <option value="team1">Team1</option>
-                    <option value="team2">Team2</option>
+{{--                    <option value="team1">Team1</option>--}}
+{{--                    <option value="team2">Team2</option>--}}
                 </select>
                 <button type="submit" class="create-btn" id="confirmBtn">{{__('confirm')}}</button>
             </form>

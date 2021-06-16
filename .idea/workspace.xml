@@ -2,30 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92f8948b-e710-4405-adb5-a19c5c0a6e0b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sports-fantasy-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sports-fantasy-web.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/league/name.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/league/name.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard/league/number.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard/league/number.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../moon/source/photoquote-laravel/app/Http/Controllers/admin/SourceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../moon/source/photoquote-laravel/app/Http/Controllers/admin/SourceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../moon/source/photoquote-laravel/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../moon/source/photoquote-laravel/app/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../moon/source/photoquote-laravel/resources/views/admin/source/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../moon/source/photoquote-laravel/resources/views/admin/source/create.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="repository" />
+    </option>
+  </component>
   <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../moon/source/photoquote-laravel" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
@@ -154,7 +156,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../moon/source/photoquote-laravel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../moon/source/photoquote-laravel/resources/views/pages/article" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -166,9 +168,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\kcr_work\moon\source\photoquote-laravel\resources\views\pages\article" />
+      <recent name="D:\kcr_work\freelancer\sports_fantasy\work\sports-fantasy-web" />
       <recent name="D:\kcr_work\freelancer\sports_fantasy\work\sports-fantasy-web\resources\views\admin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\kcr_work\freelancer\sports_fantasy\work\sports-fantasy-web\public\image" />
       <recent name="D:\kcr_work\freelancer\sports_fantasy\work\sports-fantasy-web\app\Http\Controllers\Admin" />
     </key>
   </component>
@@ -190,12 +195,143 @@
       <workItem from="1621948167747" duration="6475000" />
       <workItem from="1621984405236" duration="135000" />
       <workItem from="1621988054805" duration="3191000" />
-      <workItem from="1622120882053" duration="5965000" />
+      <workItem from="1622120882053" duration="17824000" />
+      <workItem from="1622213596342" duration="29935000" />
     </task>
+    <task id="LOCAL-00001" summary="last name issue in source">
+      <created>1622156647906</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1622156647906</updated>
+    </task>
+    <task id="LOCAL-00002" summary="league name, team number">
+      <created>1622156706520</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622156706520</updated>
+    </task>
+    <task id="LOCAL-00003" summary="source full name in photo admin table">
+      <created>1622158470047</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1622158470047</updated>
+    </task>
+    <task id="LOCAL-00004" summary="tab regular links">
+      <created>1622159683942</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1622159683942</updated>
+    </task>
+    <task id="LOCAL-00005" summary="non visible to 404">
+      <created>1622179729138</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1622179729138</updated>
+    </task>
+    <task id="LOCAL-00006" summary="image upload in photographs">
+      <created>1622183197470</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1622183197470</updated>
+    </task>
+    <task id="LOCAL-00007" summary="upload vendor">
+      <created>1622184983070</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1622184983070</updated>
+    </task>
+    <task id="LOCAL-00008" summary="env upload">
+      <created>1622186334380</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1622186334380</updated>
+    </task>
+    <task id="LOCAL-00009" summary="sql upload">
+      <created>1622186675459</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1622186675459</updated>
+    </task>
+    <task id="LOCAL-00010" summary="301 redirect">
+      <created>1622271077116</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1622271077116</updated>
+    </task>
+    <task id="LOCAL-00011" summary="article description non mandatory">
+      <created>1622271312511</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1622271312511</updated>
+    </task>
+    <task id="LOCAL-00012" summary="article image width">
+      <created>1622271754824</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1622271754824</updated>
+    </task>
+    <task id="LOCAL-00013" summary="hide when click outside share modal">
+      <created>1622273680413</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1622273680413</updated>
+    </task>
+    <task id="LOCAL-00014" summary="hide when click outside share modal--2">
+      <created>1622273719088</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1622273719088</updated>
+    </task>
+    <task id="LOCAL-00015" summary="route error">
+      <created>1622315920857</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1622315920858</updated>
+    </task>
+    <task id="LOCAL-00016" summary="image error">
+      <created>1622317383694</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1622317383694</updated>
+    </task>
+    <task id="LOCAL-00017" summary="image error">
+      <created>1622317598563</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1622317598563</updated>
+    </task>
+    <task id="LOCAL-00018" summary="image error">
+      <created>1622317864430</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1622317864430</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -208,5 +344,26 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="last name issue in source" />
+    <MESSAGE value="league name, team number" />
+    <MESSAGE value="source full name in photo admin table" />
+    <MESSAGE value="tab regular links" />
+    <MESSAGE value="non visible to 404" />
+    <MESSAGE value="image upload in photographs" />
+    <MESSAGE value="upload vendor" />
+    <MESSAGE value="env upload" />
+    <MESSAGE value="sql upload" />
+    <MESSAGE value="301 redirect" />
+    <MESSAGE value="article description non mandatory" />
+    <MESSAGE value="article image width" />
+    <MESSAGE value="hide when click outside share modal" />
+    <MESSAGE value="hide when click outside share modal--2" />
+    <MESSAGE value="route error" />
+    <MESSAGE value="image error" />
+    <option name="LAST_COMMIT_MESSAGE" value="image error" />
   </component>
 </project>

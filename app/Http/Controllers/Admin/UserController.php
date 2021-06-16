@@ -36,7 +36,7 @@ class UserController extends AdminController
     public function store(Request $request)
     {
         $request->validate([
-            'email'=>"email"
+            'email'=>"email|unique:users"
         ]);
         $params = $request->all();
         unset($params['id']);
@@ -54,7 +54,7 @@ class UserController extends AdminController
     {
         $request->validate([
             'id'=>'exists:users',
-            'email'=>"email"
+            'email'=>"email|unique:users,email,".$request->get('id')
         ]);
         $params = $request->all();
         $id = $params['id'];

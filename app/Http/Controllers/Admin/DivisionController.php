@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Division;
 use App\Models\League;
+use App\Models\Sport;
 use Illuminate\Http\Request;
 
 class DivisionController extends AdminController
@@ -27,8 +28,8 @@ class DivisionController extends AdminController
 
     public function create()
     {
-        $leagues = League::orderBy('name', 'asc')->get();
-        return view('admin.divisions.create', compact('leagues'));
+        $sports = Sport::all();
+        return view('admin.divisions.create', compact('sports'));
     }
 
     public function store(Request $request)
@@ -44,9 +45,9 @@ class DivisionController extends AdminController
 
     public function edit(Request $request)
     {
-        $leagues = League::orderBy('name', 'asc')->get();
+        $sports = Sport::all();
         $division = Division::find($request->get("id"));
-        return view('admin.divisions.create', compact("division", 'leagues'));
+        return view('admin.divisions.create', compact("division", 'sports'));
     }
 
     public function update(Request $request)

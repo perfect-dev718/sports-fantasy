@@ -25,7 +25,7 @@
             <div class="col-8 d-flex justify-content-center align-items-center">
                 <img src="/image/photo.svg" alt="My photo" class="avatar">
                 <div class="name-block">
-                    <h4 class="name">Mark Sinatra</h4>
+                    <h4 class="name">{{ getFullName(Auth::user()) }}</h4>
                     <small>Position</small>
                 </div>
                 <button class="game-btn" id="game-btn">Game Center</button>

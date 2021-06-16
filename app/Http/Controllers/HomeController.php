@@ -26,10 +26,9 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 //        return view('home');
-        Log::info(Auth::user()->role);
         if(Auth::user()->role == 'admin') {
             return redirect()->route('admin');
         }
-        return redirect()->route('game.center');
+        return redirect()->route('profile');
     }
 }

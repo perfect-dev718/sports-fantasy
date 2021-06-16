@@ -11106,7 +11106,7 @@ select.text-white option {
   height: 72px;
   margin-top: 15px;
   background: linear-gradient(180deg, #0F1441 17.81%, #1E1D66 54.39%, #3B2561 100%);
-  padding: 15px 200px;
+  padding: 20px 200px 15px 200px;
 }
 #my-league .header .header-logo {
   display: flex;
@@ -11362,7 +11362,17 @@ input[type=radio] {
   border-bottom: 0.5px solid white;
 }
 #players-free-agency .table-block .content-table::-webkit-scrollbar {
-  display: none;
+  width: 10px;
+}
+#players-free-agency .table-block .content-table::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #888;
+}
+#players-free-agency .table-block .content-table::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+#players-free-agency .table-block .content-table::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 #players-free-agency .table-block .filter-block {
   margin-bottom: 20px;
@@ -11750,4 +11760,21 @@ input[type=radio] {
   font-size: 30px;
   color: #6967A0;
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #888;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

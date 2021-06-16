@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\League;
+use App\Models\Player;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +26,8 @@ class DashboardController extends Controller
      * set League name
      */
     public function set_league_name() {
-        return view('dashboard.league.name');
+        $teams = Team::orderBy('name', 'asc')->get();
+        return view('dashboard.league.name', compact('teams'));
     }
 
     /**
@@ -176,15 +178,34 @@ class DashboardController extends Controller
     }
 
     public function my_teams() {
-        return view('dashboard.game.my_teams');
+        $teams = Team::where('ownerId', Auth::user()->id)->orderBy('name', 'asc')->get();
+        return view('dashboard.game.my_teams', compact('teams'));
+    }
+
+    public function team_create() {
+        return view('dashboard.team.name');
+    }
+
+    public function team_save(Request $request) {
+        $request->validate([
+            'name'=>"required|unique:teams"
+        ]);
+        $newTeam = new Team();
+        $newTeam->name = $request->get('name');
+        $newTeam->ownerId = Auth::user()->id;
+        $newTeam->save();
+        return redirect()->back()->with('success', 'Created Successfully');
     }
 
     public function players_free_agency() {
-        return view('dashboard.game.players_free_agency');
+        $players = Player::where('status', 'free')->orderBy('full_name', 'asc')->get();
+        return view('dashboard.game.players_free_agency', compact('players'));
     }
 
-    public function players_info() {
-        return view('dashboard.game.players_info');
+    public function players_info(Request $request, $id) {
+        $players = Player::where('status', 'free')->orderBy('full_name', 'asc')->get();
+        $player = Player::find($id);
+        return view('dashboard.game.players_info', compact('player', 'players'));
     }
 
     public function player_add() {

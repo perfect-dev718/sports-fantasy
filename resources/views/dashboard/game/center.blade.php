@@ -62,10 +62,6 @@
 @section('script')
     <script>
         $(function (){
-            $('#public-league-btn').click(function (){
-                location.href = "{{ route('invite.friend') }}";
-            });
-
             $('#my-league-btn').click(function (){
                 location.href = "{{ route('game.my.league') }}";
             });

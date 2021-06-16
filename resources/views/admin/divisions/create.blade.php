@@ -25,15 +25,15 @@
                         {{ csrf_field() }}
                         <input type="hidden" value="{{isset($division)?$division->id:""}}" name="id">
                         @php
-                            $leagueOptions = array();
-                            foreach ($leagues as $league){
+                            $sportOptions = array();
+                            foreach ($sports as $sport){
                                 $leagueOptions[] = ["value"=>$league->id, "text"=>$league->name];
                             }
                             $inputs = [
                                 ["name"=>"name", "label"=>"Name", "value"=>isset($division)?$division->name:old('name')],
                                 [
-                                    "name"=>"leagueId", "label"=>"League", "value"=>isset($division)?$division->leagueId:old('leagueId'), "type"=>"select",
-                                    "options"=>$leagueOptions
+                                    "name"=>"sportId", "label"=>"Sport", "value"=>isset($division)?$division->sportId:old('sportId'), "type"=>"select",
+                                    "options"=>$sportOptions
                                 ],
                             ]
                         @endphp
