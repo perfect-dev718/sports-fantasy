@@ -24,8 +24,8 @@ class AdminController extends Controller
      * @param Request $request
      */
     public function getTeamsPlayers(Request $request) {
-        $allTeams = Team::all();
-        $allPlayers = Player::all();
+        $allTeams = Team::select('id', 'name')->get();
+        $allPlayers = Player::select('id','full_name')->get();
         $teams = array();
         foreach ($allTeams as $team) {
             $teams[$team->id] = $team;
