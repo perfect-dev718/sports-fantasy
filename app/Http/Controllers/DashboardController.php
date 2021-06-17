@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\League;
 use App\Models\Player;
+use App\Models\Roster;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use View;
 class DashboardController extends Controller
 {
     //
@@ -203,9 +204,42 @@ class DashboardController extends Controller
     }
 
     public function players_info(Request $request, $id) {
-        $players = Player::where('status', 'free')->orderBy('full_name', 'asc')->get();
+        /**************** ToDo ***********/
+        // $players = Player::where('status', 'free')->orderBy('full_name', 'asc')->get();
+        $players = Player::where('status', 'free')->orderBy('full_name', 'asc')->take(20)->get();
+        $teams = Team::where('ownerId', Auth::user()->id)->orderBy('name', 'asc')->get();
         $player = Player::find($id);
-        return view('dashboard.game.players_info', compact('player', 'players'));
+        return view('dashboard.game.players_info', compact('player', 'players', 'teams'));
+    }
+
+    // get player personal info by ajax.
+    public function getPlayerAjax(Request $request) {
+        $id = $request->get('id');
+        $player = Player::find($id);
+        $html = View::make('partials.game.player_profile', compact('player'))->render();
+        return ['success'=>true, 'html'=>$html, 'player_id'=>$id];
+    }
+
+    /**
+     * @description: add player to specific team by ajax
+     * @method: POST
+     * @params: $request['player_id','teamId']
+     */
+    public function addPlayerTeamAjax(Request $request) {
+        $player_id = $request->get('player_id');
+        $teamId = $request->get('teamId');
+
+        /** TODO : Player should be unique in each season */
+        $roster = new Roster();
+        $roster->playerId = $player_id;
+        $roster->teamId = $teamId;
+        $roster->save();
+
+        // player should be active
+        $player = Player::find($player_id);
+        $player->status = "play";
+        $player->save();
+        return ['success'=>true, 'msg'=>'Successfully added'];
     }
 
     public function player_add() {

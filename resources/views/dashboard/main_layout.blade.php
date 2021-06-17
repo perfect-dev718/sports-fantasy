@@ -100,6 +100,7 @@
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.js')}}"></script>
 <script src="{{asset("js/jquery.dataTables.min.js")}}"></script>
 <script src="{{asset("js/dataTables.bootstrap4.min.js")}}"></script>
+<script src="{{asset("js/notify.min.js")}}"></script>
 <script>
     function toggleMenu() {
         if($('.menu-block').hasClass('show')){

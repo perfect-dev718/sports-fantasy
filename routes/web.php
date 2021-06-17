@@ -74,6 +74,10 @@ Route::post('game/team/save', [DashboardController::class, 'team_save'])->name('
 
 Route::get('game/players-free-agency', [DashboardController::class, 'players_free_agency'])->name('game.players.free.agency');
 Route::get('game/player/info/{id}', [DashboardController::class, 'players_info'])->name('game.players.info');
+Route::post('game/player/ajax', [DashboardController::class, 'getPlayerAjax'])->name('game.get.player.ajax');
+Route::post('team/player/add/ajax', [DashboardController::class, 'addPlayerTeamAjax'])->name('team.player.add.ajax');
+
+
 Route::get('game/player/add', [DashboardController::class, 'player_add'])->name('game.player.add');
 Route::get('game/team/confirm', [DashboardController::class, 'confirm_team'])->name('game.confirm.team');
 Route::get('game/team/show', [DashboardController::class, 'team_show'])->name('game.team.show');
