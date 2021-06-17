@@ -24,6 +24,8 @@
                 <th>Full name</th>
                 <th>Name</th>
 {{--                <th>Photo</th>--}}
+                <th>NFL Team</th>
+{{--                <th>Fantasy Team</th>--}}
                 <th>Status</th>
 {{--                <th class="text-center">Actions</th>--}}
             </tr>
@@ -101,6 +103,8 @@
                     { data: 'id', name: 'id'},
                     { data: 'full_name', name: "full_name" },
                     { data: 'name', name: 'name' },
+                    { data: 'nfl_team', name: 'nfl_team'},
+                    // { data: 'fantasy_team', name: 'fantasy_team'},
                     { data: 'status', name: 'status' },
 {{--                    {--}}
 {{--                        data: 'id',--}}

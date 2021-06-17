@@ -57,7 +57,9 @@
                                                 {{ $player->position }}
                                             </div>
                                             <div class="col-4">
-                                                <img src="/image/player1.png" class="avatar rounded-circle">
+                                                <a href="javascript: getPlayerInfo({{$player->id}})">
+                                                    <img src="/image/player1.png" class="avatar rounded-circle">
+                                                </a>
                                             </div>
                                             <div class="col-4">
                                                 <div class="name-block">
@@ -86,113 +88,90 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="profile-block">
-                    <h3 class="title">Player Info</h3>
-                    <div class="row">
-                        <div class="col-5">
-                            <img src="/image/player1.png" class="rounded-circle photo">
-                        </div>
-                        <div class="col-7">
-                            <div class="name-block">
-                                <h5 class="name">Le’Veon Bell</h5>
-                                <p class="city">New York Jets</p>
-                                <p class="position-text">
-                                    Position rb
-                                </p>
-                                <p class="position-text">
-                                    Position on waivers (THU)
-                                </p>
-                                <p class="position-text">
-                                    status healthy
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row pos-block">
-                        <div class="col-4 text-center item">
-                            <h5 class="pos-title">POS RANK</h5>
-                            -
-                        </div>
-                        <div class="col-4 text-center item">
-                            <h5 class="pos-title">avg points</h5>
-                            -
-                        </div>
-                        <div class="col-4 item">
-                            <h5 class="pos-title">
-                                % rostered
-                            </h5>
-                            95.1(+5%)
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <button class="plus-btn text-white" style="margin-right: 7px" id="add-btn">Add</button>
-                        <button class="flag-btn"><span class="fa fa-flag" id="watch-btn"></span>&nbsp;Watch</button>
-                    </div>
-                    <div class="row season-block">
-                        <h5 class="title">Season Status</h5>
-                        <table class="table">
-                            <colgroup>
-                                <col width="28%">
-                                <col width="18%">
-                                <col width="18%">
-                                <col width="18%">
-                                <col width="18%">
-                            </colgroup>
-                            <thead>
-                            <th></th>
-                            <th>Att</th>
-                            <th>Yds</th>
-                            <th>TD</th>
-                            <th>Pts</th>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>2019</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Proj 2020</td>
-                                <td>280.5</td>
-                                <td>1310</td>
-                                <td>8.5</td>
-                                <td>318</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="row outlook-block">
-                        <h5 class="title col-12">Outlook</h5>
-                        <div class="points d-flex justify-content-between">
-                            <p>2020 Projection</p>
-                            <p>318 Points</p>
-                        </div>
-                        <div class="content">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        </div>
-                    </div>
-                </div>
+            <div class="col-6" id="profile_block">
+
             </div>
         </div>
-
     </div>
 
+    <div id="teamModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Team Select</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <select id="selected-team" class="form-control">
+                        @foreach($teams as $team)
+                            <option value="{{ $team->id }}">{{ $team->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="team-confirm" class="btn btn-primary"><span class="fa fa-check"></span>&nbsp;Confirm</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 @endsection
 
 @section('script')
     <script>
+        var _token = "{{ csrf_token() }}";
+
+        // selected player
+        var player_id;
         $(function () {
+            init();
             $('#add-btn').click(function (){
                 location.href = "{{ route('game.player.add') }}";
             });
+
+            $('#team-confirm').click(function (){
+                var teamId = $('#selected-team').val();
+                addPlayerToTeam(teamId);
+            })
         });
 
+        function init() {
+            getPlayerInfo("{{ $player->id }}");
+        }
+
+        function addPlayerToTeam(teamId) {
+            $.ajax({
+                url: "{{ route('team.player.add.ajax') }}",
+                method: "POST",
+                data: {_token: _token, teamId: teamId, player_id: player_id},
+                success: function (res) {
+                    if(res.success) {
+                        $.notify(res.msg, "success");
+                        $('#teamModal').modal('toggle');
+                    }
+                }
+            })
+        }
+
+        function getPlayerInfo(id) {
+            $.ajax({
+               url: "{{ route('game.get.player.ajax') }}",
+               method: "POST",
+               data: {_token: _token, id: id},
+               success: function (res) {
+                   if(res.success) {
+                       $('#profile_block').html(res.html);
+                       player_id = res.player_id;
+                       $('#add-btn').click(function (){
+                           $('#teamModal').modal('show');
+                       });
+                   }
+               }
+            });
+        }
     </script>
 @endsection
 
