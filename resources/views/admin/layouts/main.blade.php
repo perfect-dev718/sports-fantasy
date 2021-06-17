@@ -168,6 +168,13 @@
                     </li>
 
                     <li class="nav-item">
+                        <a href="{{ route('roster.admin') }}" class="nav-link @if($url==='roster') active @endif">
+                            <i class="nav-icon fa fa-dashboard"></i>
+                            <p>Roster</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a href="{{ route('sport.admin') }}" class="nav-link @if($url==='sport') active @endif">
                             <i class="nav-icon fa fa-gamepad"></i>
                             <p>Sports</p>

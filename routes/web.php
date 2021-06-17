@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\LeagueController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\MatchupController;
 use App\Http\Controllers\Admin\PlayerController;
+use App\Http\Controllers\Admin\RosterController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Artisan;
 /*
@@ -95,6 +96,7 @@ Route::get('game/players-standings', [DashboardController::class, 'standings'])-
 /*********************************** Admin Dashboard ***********************/
 
 Route::prefix('admin')->group(function () {
+    Route::post('/getTeamsPlayers', [AdminController::class, 'getTeamsPlayers'])->name('getTeamsPlayers');
     Route::get('/', [AdminController::class, 'index'])->name('admin');
     Route::get('/users', [UserController::class, 'index'])->name('user.admin');
     Route::get('/users/edit', [UserController::class, 'edit'])->name('user.edit');
@@ -140,5 +142,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/players', [PlayerController::class, 'index'])->name('player.admin');
     Route::post('/players/delete', [PlayerController::class, 'delete'])->name('player.delete');
     Route::post('/players/ajax', [PlayerController::class, 'getAjaxData'])->name('player.ajax');
+
+    Route::get('/rosters', [RosterController::class, 'index'])->name('roster.admin');
+    Route::post('/rosters/ajax', [RosterController::class, 'getAjaxData'])->name('roster.ajax');
 
 });
