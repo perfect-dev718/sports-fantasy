@@ -24,29 +24,34 @@
                     <h3 class="text-white font-14 mt-3 mb-3">Draft Type</h3>
                     <form class="pl-2" method="POST" action="{{ route('draft.format.save') }}">
                         {!! csrf_field() !!}
+                        @isset($league_setting)
+                            <input type="hidden" name="id" value="{{ $league_setting->id }}">
+                        @endisset
+                        <input type="hidden" value="{{ $id }}" name="league_id">
                         <div class="d-flex justify-content-start p-2">
-                            <input type="radio" class="form-check-input" name="draft_type" value="double" id="double_draft">
+                            <input type="radio" class="form-check-input" name="draft_format"
+                                   value="double" id="double_draft">
                             <label for="double_draft" class="ml-2 form-check-label">
                                 <p class="font-16 text-white mb-0">Double Draft</p>
                                 <small class="text-white font-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
                             </label>
                         </div>
                         <div class="d-flex justify-content-start p-2">
-                            <input type="radio" class="form-check-input" name="draft_type" value="snake" id="double_draft">
+                            <input type="radio" class="form-check-input" name="draft_format" value="snake" id="snake_draft">
                             <label for="double_draft" class="ml-2 form-check-label">
                                 <p class="font-16 text-white mb-0 text-capitalize">Snake</p>
                                 <small class="text-white font-12">Teams make picks and then order reverses</small>
                             </label>
                         </div>
                         <div class="d-flex justify-content-start p-2">
-                            <input type="radio" class="form-check-input" name="draft_type" value="auction" id="double_draft">
+                            <input type="radio" class="form-check-input" name="draft_format" value="auction" id="auction_draft">
                             <label for="double_draft" class="ml-2 form-check-label">
                                 <p class="font-16 text-white mb-0 text-capitalize">auction</p>
                                 <small class="text-white font-12">Each Team is given a budget and teams big for players</small>
                             </label>
                         </div>
                         <div class="d-flex justify-content-start p-2">
-                            <input type="radio" class="form-check-input" name="draft_type" value="autopick" id="double_draft">
+                            <input type="radio" class="form-check-input" name="draft_format" value="autopick" id="autopick_draft">
                             <label for="double_draft" class="ml-2 form-check-label">
                                 <p class="font-16 text-white mb-0 text-capitalize">autopick</p>
                                 <small class="text-white font-12">Each Team is selected automatically based on pre-draft
@@ -59,10 +64,10 @@
                             </h3>
                             <div class="row">
                                 <div class="col-6">
-                                    <input type="date" name="draft_date" class="datepicker p-2" placeholder="Draft Date">
+                                    <input type="date" value="{{isset($league_setting)?$league_setting->draft_date:old('draft_date')}}" name="draft_date" class="datepicker p-2" placeholder="Draft Date">
                                 </div>
                                 <div class="col-6">
-                                    <input type="time" name="draft_time" class="timepicker p-2" placeholder="Select Time">
+                                    <input type="time" value="{{isset($league_setting)?$league_setting->draft_time:old('draft_time')}}" name="draft_time" class="timepicker p-2" placeholder="Select Time">
                                 </div>
                             </div>
                         </div>
@@ -82,7 +87,15 @@
 @section('script')
     <script>
         $(function (){
-
+            init();
         });
+
+        function init() {
+            var draft_type = "{{isset($league_setting)?$league_setting->draft_format : old('draft_format') }}";
+            var $radios = $('input:radio[name=draft_format]');
+            if($radios.is(':checked') === false) {
+                $radios.filter(`[value=${draft_type}]`).prop('checked', true);
+            }
+        }
     </script>
 @endsection

@@ -160,7 +160,11 @@ class DashboardController extends Controller
      */
     public function draft_format_save(Request $request) {
         $params = $request->all();
+        unset($params['_token']);
         $league_setting = new LeagueSetting();
+        if(isset($params['id'])) {
+            $league_setting = LeagueSetting::find($params['id']);
+        }
         foreach ($params as $key=>$param) {
             $league_setting->$key = $param;
         }

@@ -47,13 +47,13 @@ Route::post('league/name/save', [DashboardController::class, 'save_league_name']
 
 Route::get('league/join', [DashboardController::class, 'join_league'])->name('league.join');
 Route::get('league/choose', [DashboardController::class, 'choose_league'])->name('league.choose');
-Route::get('league/settings/{id}', [DashboardController::class, 'league_settings'])->name('league.settings');
-Route::get('league/schedule/{id}', [DashboardController::class, 'league_schedule'])->name('league.schedule');
-Route::get('league/standing/{id}', [DashboardController::class, 'standings'])->name('league.standings');
-Route::get('league/scoreboard/{id}', [DashboardController::class, 'league_scoreboard'])->name('league.scoreboard');
-Route::get('league/manager/{id}', [DashboardController::class, 'league_manager'])->name('league.manager');
-Route::get('league/information/{id}', [DashboardController::class, 'league_info'])->name('league.info');
-Route::get('league/draft/format/{id}', [DashboardController::class, 'draft_format'])->name('draft.format');
+Route::get('league/settings/{id?}', [DashboardController::class, 'league_settings'])->name('league.settings');
+Route::get('league/schedule/{id?}', [DashboardController::class, 'league_schedule'])->name('league.schedule');
+Route::get('league/standing/{id?}', [DashboardController::class, 'standings'])->name('league.standings');
+Route::get('league/scoreboard/{id?}', [DashboardController::class, 'league_scoreboard'])->name('league.scoreboard');
+Route::get('league/manager/{id?}', [DashboardController::class, 'league_manager'])->name('league.manager');
+Route::get('league/information/{id?}', [DashboardController::class, 'league_info'])->name('league.info');
+Route::get('league/draft/format/{id?}', [DashboardController::class, 'draft_format'])->name('draft.format');
 Route::post('league/draft/format/save', [DashboardController::class, 'draft_format_save'])->name('draft.format.save');
 Route::post('league/ajax', [DashboardController::class, 'getLeagueInfoAjax'])->name('getLeagueInfoAjax');
 
