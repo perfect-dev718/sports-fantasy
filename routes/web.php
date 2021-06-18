@@ -47,10 +47,15 @@ Route::post('league/name/save', [DashboardController::class, 'save_league_name']
 
 Route::get('league/join', [DashboardController::class, 'join_league'])->name('league.join');
 Route::get('league/choose', [DashboardController::class, 'choose_league'])->name('league.choose');
-Route::get('league/settings', [DashboardController::class, 'league_settings'])->name('league.settings');
-Route::get('league/scoreboard', [DashboardController::class, 'league_scoreboard'])->name('league.scoreboard');
-Route::get('league/manager', [DashboardController::class, 'league_manager'])->name('league.manager');
-Route::get('league/information', [DashboardController::class, 'league_info'])->name('league.info');
+Route::get('league/settings/{id}', [DashboardController::class, 'league_settings'])->name('league.settings');
+Route::get('league/schedule/{id}', [DashboardController::class, 'league_schedule'])->name('league.schedule');
+Route::get('league/standing/{id}', [DashboardController::class, 'standings'])->name('league.standings');
+Route::get('league/scoreboard/{id}', [DashboardController::class, 'league_scoreboard'])->name('league.scoreboard');
+Route::get('league/manager/{id}', [DashboardController::class, 'league_manager'])->name('league.manager');
+Route::get('league/information/{id}', [DashboardController::class, 'league_info'])->name('league.info');
+Route::get('league/draft/format/{id}', [DashboardController::class, 'draft_format'])->name('draft.format');
+Route::post('league/draft/format/save', [DashboardController::class, 'draft_format_save'])->name('draft.format.save');
+Route::post('league/ajax', [DashboardController::class, 'getLeagueInfoAjax'])->name('getLeagueInfoAjax');
 
 
 Route::get('league/number', [DashboardController::class, 'set_league_number'])->name('league.number');
@@ -61,7 +66,6 @@ Route::get('invite/friend', [DashboardController::class, 'invite_friend'])->name
 Route::get('game/profile', [DashboardController::class, 'game_profile'])->name('game.profile');
 Route::get('draft', [DashboardController::class, 'draft'])->name('draft');
 Route::get('draft/order', [DashboardController::class, 'draft_order'])->name('draft.order');
-Route::get('draft/format', [DashboardController::class, 'draft_format'])->name('draft.format');
 
 /**
  * Sidebar menus
@@ -88,9 +92,6 @@ Route::get('game/team/play-off', [DashboardController::class, 'team_play_off'])-
 Route::get('game/trade/offer', [DashboardController::class, 'trade_offer'])->name('game.trade.offer');
 Route::get('game/trade/condition-drop', [DashboardController::class, 'condition_drop'])->name('game.trade.condition.drop');
 Route::get('game/trade/recap', [DashboardController::class, 'trade_recap'])->name('game.trade.recap');
-
-Route::get('game/players-league-schedule', [DashboardController::class, 'league_schedule'])->name('game.league.schedule');
-Route::get('game/players-standings', [DashboardController::class, 'standings'])->name('game.standings');
 
 
 /*********************************** Admin Dashboard ***********************/

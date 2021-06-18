@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\League;
+use App\Models\LeagueInformation;
+use App\Models\LeagueSetting;
 use App\Models\Player;
 use App\Models\Roster;
 use App\Models\Team;
@@ -61,28 +63,28 @@ class DashboardController extends Controller
     /**
      * League Setting page
      */
-    public function league_settings() {
-        return view('dashboard.league.settings');
+    public function league_settings(Request $request, $id) {
+        return view('dashboard.league.settings', compact('id'));
     }
 
     /**
      * League Scoreboard page
      */
-    public function league_scoreboard() {
+    public function league_scoreboard(Request $request, $id) {
         return view('dashboard.game.scoreboard');
     }
 
     /**
      * League Manager
      */
-    public function league_manager() {
+    public function league_manager(Request $request, $id) {
         return view('dashboard.league.manager');
     }
 
     /**
      * League Information page
      */
-    public function league_info() {
+    public function league_info(Request $request, $id) {
         return view('dashboard.league.information');
     }
 
@@ -148,8 +150,34 @@ class DashboardController extends Controller
     /**
      * Draft format page
      */
-    public function draft_format() {
-        return view('dashboard.game.draft_format');
+    public function draft_format(Request $request, $id) {
+        $league_setting = LeagueSetting::where('league_id', $id)->first();
+        return view('dashboard.game.draft_format', compact('id', 'league_setting'));
+    }
+
+    /**
+     * Save Draft format
+     */
+    public function draft_format_save(Request $request) {
+        $params = $request->all();
+        $league_setting = new LeagueSetting();
+        foreach ($params as $key=>$param) {
+            $league_setting->$key = $param;
+        }
+        $league_setting->save();
+        return redirect()->back()->with('success', 'Successfully Saved');
+    }
+
+    /**
+     * @description: get each league info
+     */
+    public function getLeagueInfoAjax(Request $request) {
+        $id = $request->get('id');
+        $league = League::find($id);
+        $info_html = View::make('partials.league.info', compact('league'))->render();
+        $score_html = View::make('partials.league.score', compact('league'))->render();
+        $match_html = View::make('partials.league.matchup', compact('league'))->render();
+        return ['success'=>true, 'info'=>$info_html, 'score'=>$score_html, 'matchup'=>$match_html];
     }
 
     /**
