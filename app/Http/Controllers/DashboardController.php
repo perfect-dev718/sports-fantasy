@@ -10,6 +10,7 @@ use App\Models\Roster;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use View;
 class DashboardController extends Controller
 {
@@ -160,7 +161,11 @@ class DashboardController extends Controller
      */
     public function draft_format_save(Request $request) {
         $params = $request->all();
+        unset($params['_token']);
         $league_setting = new LeagueSetting();
+        if(isset($params['id'])) {
+            $league_setting = LeagueSetting::find($params['id']);
+        }
         foreach ($params as $key=>$param) {
             $league_setting->$key = $param;
         }
@@ -284,8 +289,34 @@ class DashboardController extends Controller
     }
 
     // Play off team
-    public function team_play_off() {
-        return view('dashboard.game.team_play_off');
+    public function team_play_off(Request $request, $id) {
+        $teams = Team::all();
+        $league_setting = LeagueSetting::where('league_id', $id)->first();
+        $playoff_date = $league_setting->playoff_date;
+        $playoff_teams = [];
+        if(!is_null($league_setting)) {
+             $playoff_teams = json_decode($league_setting->playoff_teams);
+        }
+        return view('dashboard.league.team_play_off', compact('teams', 'id', 'playoff_teams', 'playoff_date'));
+    }
+
+    // save playoff
+    public function team_play_off_save_ajax(Request $request) {
+        $teams = $request->get('teams');
+        $teamAry = [];
+        foreach ($teams as $team) {
+            if($team['val']=="true") {
+                $teamAry[] = $team['id'];
+            }
+        }
+        $leagueId = $request->get('leagueId');
+        $league_setting = LeagueSetting::where('league_id', $leagueId)->first();
+        if(!is_null($league_setting)) {
+            $league_setting->playoff_teams = $teamAry;
+            $league_setting->playoff_date = $request->get('playoff_date');
+            $league_setting->save();
+        }
+        return ['success'=>true, "msg"=>"Successfully Saved"];
     }
 
     // Trade offer page

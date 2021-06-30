@@ -41,13 +41,13 @@
                             <span class="fa fa-angle-right text-white font-16"></span>
                         </li>
                     </a>
-                    <a href="{{ route('game.league.schedule') }}" class="text-decoration-none">
+                    <a href="{{ route('league.schedule') }}" class="text-decoration-none">
                         <li>
                             <p class="mb-0">League Schedule</p>
                             <span class="fa fa-angle-right text-white font-16"></span>
                         </li>
                     </a>
-                    <a href="{{ route('game.standings') }}" class="text-decoration-none">
+                    <a href="{{ route('league.standings') }}" class="text-decoration-none">
                         <li>
                             <p class="mb-0">Standings</p>
                             <span class="fa fa-angle-right text-white font-16"></span>

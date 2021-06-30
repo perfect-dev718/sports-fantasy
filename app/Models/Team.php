@@ -17,4 +17,8 @@ class Team extends Model
     public function division() {
         return $this->hasOne(Division::class, 'id', 'divisionId');
     }
+
+    public function owner() {
+        return $this->belongsTo(User::class,'ownerId', 'id');
+    }
 }

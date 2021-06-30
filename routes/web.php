@@ -47,13 +47,16 @@ Route::post('league/name/save', [DashboardController::class, 'save_league_name']
 
 Route::get('league/join', [DashboardController::class, 'join_league'])->name('league.join');
 Route::get('league/choose', [DashboardController::class, 'choose_league'])->name('league.choose');
-Route::get('league/settings/{id}', [DashboardController::class, 'league_settings'])->name('league.settings');
-Route::get('league/schedule/{id}', [DashboardController::class, 'league_schedule'])->name('league.schedule');
-Route::get('league/standing/{id}', [DashboardController::class, 'standings'])->name('league.standings');
-Route::get('league/scoreboard/{id}', [DashboardController::class, 'league_scoreboard'])->name('league.scoreboard');
-Route::get('league/manager/{id}', [DashboardController::class, 'league_manager'])->name('league.manager');
-Route::get('league/information/{id}', [DashboardController::class, 'league_info'])->name('league.info');
-Route::get('league/draft/format/{id}', [DashboardController::class, 'draft_format'])->name('draft.format');
+Route::get('league/settings/{id?}', [DashboardController::class, 'league_settings'])->name('league.settings');
+Route::get('league/schedule/{id?}', [DashboardController::class, 'league_schedule'])->name('league.schedule');
+Route::get('league/standing/{id?}', [DashboardController::class, 'standings'])->name('league.standings');
+Route::get('league/scoreboard/{id?}', [DashboardController::class, 'league_scoreboard'])->name('league.scoreboard');
+Route::get('league/manager/{id?}', [DashboardController::class, 'league_manager'])->name('league.manager');
+Route::get('league/information/{id?}', [DashboardController::class, 'league_info'])->name('league.info');
+Route::get('league/draft/format/{id?}', [DashboardController::class, 'draft_format'])->name('draft.format');
+Route::get('league/team/play-off/{id?}', [DashboardController::class, 'team_play_off'])->name('league.team.play.off');
+Route::post('league/team/play-off/save', [DashboardController::class, 'team_play_off_save_ajax'])->name('league.team.play.off.save');
+
 Route::post('league/draft/format/save', [DashboardController::class, 'draft_format_save'])->name('draft.format.save');
 Route::post('league/ajax', [DashboardController::class, 'getLeagueInfoAjax'])->name('getLeagueInfoAjax');
 
@@ -86,7 +89,6 @@ Route::post('team/player/add/ajax', [DashboardController::class, 'addPlayerTeamA
 Route::get('game/player/add', [DashboardController::class, 'player_add'])->name('game.player.add');
 Route::get('game/team/confirm', [DashboardController::class, 'confirm_team'])->name('game.confirm.team');
 Route::get('game/team/show', [DashboardController::class, 'team_show'])->name('game.team.show');
-Route::get('game/team/play-off', [DashboardController::class, 'team_play_off'])->name('game.team.play.off');
 
 /******************* Trade routes *************************/
 Route::get('game/trade/offer', [DashboardController::class, 'trade_offer'])->name('game.trade.offer');

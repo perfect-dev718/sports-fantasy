@@ -47,6 +47,11 @@
         $(function (){
             selected_league = $('#selected-league').val();
             showLeagueInfo();
+            // change handler
+            $('#selected-league').change(function (){
+                selected_league = $(this).val();
+                showLeagueInfo();
+            })
         });
 
         function showLeagueInfo() {

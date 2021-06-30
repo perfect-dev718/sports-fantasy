@@ -26,7 +26,7 @@
                             <span class="fa fa-angle-right text-white font-16"></span>
                         </li>
                     </a>
-                    <a href="{{ route('game.team.play.off') }}" class="text-decoration-none">
+                    <a href="{{ route('league.team.play.off', ['id'=>$id]) }}" class="text-decoration-none">
                         <li>
                             <p class="mb-0">Play off Teams</p>
                             <span class="fa fa-angle-right text-white font-16"></span>
